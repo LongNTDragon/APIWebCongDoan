@@ -9,7 +9,6 @@ namespace WebCongDoan_API.Models
         {
             CompetitionsBlogsUsers = new HashSet<CompetitionsBlogsUser>();
             CompetitionsUsers = new HashSet<CompetitionsUser>();
-            Questions = new HashSet<Question>();
             CompetitionsPrizes = new HashSet<CompetitionsPrize>();
             CompetitionsExams = new HashSet<CompetitionsExam>();
         }
@@ -25,7 +24,6 @@ namespace WebCongDoan_API.Models
         public virtual Department Dep { get; set; } = null!;
         public virtual ICollection<CompetitionsBlogsUser> CompetitionsBlogsUsers { get; set; }
         public virtual ICollection<CompetitionsUser> CompetitionsUsers { get; set; }
-        public virtual ICollection<Question> Questions { get; set; }
         public virtual ICollection<CompetitionsPrize> CompetitionsPrizes { get; set; }
         public virtual ICollection<CompetitionsExam> CompetitionsExams { get; set; }
     }

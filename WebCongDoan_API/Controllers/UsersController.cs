@@ -29,6 +29,32 @@ namespace WebCongDoan_API.Controllers
             }
         }
 
+        [HttpGet("GetAllByDepID")]
+        public async Task<IActionResult> GetAllByDepID(int id)
+        {
+            try
+            {
+                return Ok(await _userRepo.GetAllUsersByDepID(id));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("GetAllByRoleID")]
+        public async Task<IActionResult> GetAllByRoleID(int id)
+        {
+            try
+            {
+                return Ok(await _userRepo.GetAllUsersByRoleID(id));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpGet("GetById")]
         public async Task<IActionResult> GetById(String id)
         {

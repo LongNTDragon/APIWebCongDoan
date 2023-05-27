@@ -30,16 +30,22 @@ namespace WebCongDoan_API.Repository
             await _context.SaveChangesAsync();
         }
 
-        public async Task<List<CompetitionsExamVM>> GetAllompetitionsExams()
+        public async Task<List<CompetitionsExamVM>> GetAllCompetitionsExams()
         {
             var comEs = await _context.CompetitionsExams.ToListAsync();
             return _mapper.Map<List<CompetitionsExamVM>>(comEs);
         }
 
-        public async Task<List<CompetitionsExamVM>> GetAllompetitionsExamsByComID(int id)
+        public async Task<List<CompetitionsExamVM>> GetAllCompetitionsExamsByComID(int id)
         {
             var comEs = await _context.CompetitionsExams.Where(c => c.ComId == id).ToListAsync();
             return _mapper.Map<List<CompetitionsExamVM>>(comEs);
+        }
+
+        public async Task<CompetitionsExamVM> GetCompetitionsExamByComId(int id)
+        {
+            var comE = await _context.CompetitionsExams.SingleOrDefaultAsync(q => q.ComId == id);
+            return _mapper.Map<CompetitionsExamVM>(comE);
         }
 
         public async Task<CompetitionsExamVM> GetCompetitionsExamById(int id)

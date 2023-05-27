@@ -37,15 +37,21 @@ namespace WebCongDoan_API.Repository
             return _mapper.Map<List<QuestionVM>>(quess);
         }
 
+        public async Task<List<QuestionVM>> GetAllQuestionByExamId(int id)
+        {
+            var quess = await _context.Questions.Where(q => q.ExamId == id).ToListAsync();
+            return _mapper.Map<List<QuestionVM>>(quess);
+        }
+
         public async Task<QuestionVM> GetQuestionByQuesId(int id)
         {
             var ques = await _context.Questions.FindAsync(id);
             return _mapper.Map<QuestionVM>(ques);
         }
 
-        public async Task<QuestionVM> GetQuestionByComId(int id)
+        public async Task<QuestionVM> GetQuestionByExamId(int id)
         {
-            var ques = await _context.Questions.Where(q => q.ComId == id).ToListAsync();
+            var ques = await _context.Questions.SingleOrDefaultAsync(q => q.ExamId == id);
             return _mapper.Map<QuestionVM>(ques);
         }
 

@@ -5,11 +5,13 @@ namespace WebCongDoan_API.Interfaces
 {
     public interface ICompetitionsExamRepository
     {
-        public Task<List<CompetitionsExamVM>> GetAllompetitionsExams();
+        public Task<List<CompetitionsExamVM>> GetAllCompetitionsExams();
 
-        public Task<List<CompetitionsExamVM>> GetAllompetitionsExamsByComID(int id);
+        public Task<List<CompetitionsExamVM>> GetAllCompetitionsExamsByComID(int id);
 
         public Task<CompetitionsExamVM> GetCompetitionsExamById(int id);
+
+        public Task<CompetitionsExamVM> GetCompetitionsExamByComId(int id);
 
         public Task AddCompetitionsExam(CompetitionsExamVM comEVM);
 

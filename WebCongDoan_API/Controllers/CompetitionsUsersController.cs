@@ -1,20 +1,19 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebCongDoan_API.Interfaces;
-using WebCongDoan_API.Models;
 using WebCongDoan_API.ViewModels;
 
 namespace WebCongDoan_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CompetitionsExamsController : ControllerBase
+    public class CompetitionsUsersController : ControllerBase
     {
-        private readonly ICompetitionsExamRepository _comERepo;
+        private readonly ICompetitionsUserRepository _comURepo;
 
-        public CompetitionsExamsController(ICompetitionsExamRepository repo) 
-        { 
-            _comERepo = repo;
+        public CompetitionsUsersController(ICompetitionsUserRepository repo)
+        {
+            _comURepo = repo;
         }
 
         [HttpGet]
@@ -22,7 +21,7 @@ namespace WebCongDoan_API.Controllers
         {
             try
             {
-                return Ok(await _comERepo.GetAllCompetitionsExams());
+                return Ok(await _comURepo.GetAllCompetitionsUsers());
             }
             catch (Exception ex)
             {
@@ -30,16 +29,13 @@ namespace WebCongDoan_API.Controllers
             }
         }
 
-        [HttpGet("GetAllByComID")]
-        public async Task<IActionResult> Get(int id)
+        [HttpGet("GetById")]
+        public async Task<IActionResult> GetById(int id)
         {
             try
             {
-                var comE = await _comERepo.GetCompetitionsExamByComId(id);
-                if (comE == null)
-                    return NotFound();
-
-                return Ok(await _comERepo.GetAllCompetitionsExamsByComID(id));
+                var comU = await _comURepo.GetCompetitionUserById(id);
+                return comU == null ? NotFound() : Ok(comU);
             }
             catch (Exception ex)
             {
@@ -48,12 +44,12 @@ namespace WebCongDoan_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Insert(CompetitionsExamVM comEVM)
+        public async Task<IActionResult> Insert(CompetitionsUserVM comUVM)
         {
             try
             {
-                await _comERepo.AddCompetitionsExam(comEVM);
-                return StatusCode(StatusCodes.Status201Created, comEVM);
+                await _comURepo.AddCompetitionsUser(comUVM);
+                return StatusCode(StatusCodes.Status201Created, comUVM);
             }
             catch (Exception ex)
             {
@@ -62,16 +58,16 @@ namespace WebCongDoan_API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update(CompetitionsExamVM comEVM)
+        public async Task<IActionResult> Update(CompetitionsUserVM comUVM)
         {
             try
             {
-                var comE = await _comERepo.GetCompetitionsExamById(comEVM.Ceid);
-                if (comE == null)
+                var comU = await _comURepo.GetCompetitionUserById(comUVM.Cuid);
+                if (comU == null)
                     return NotFound();
 
-                await _comERepo.UpdateCompetitionsExam(comE);
-                return Ok(comE);
+                await _comURepo.UpdateCompetitionsUser(comUVM);
+                return Ok(comUVM);
             }
             catch (Exception ex)
             {
@@ -84,11 +80,11 @@ namespace WebCongDoan_API.Controllers
         {
             try
             {
-                var comE = await _comERepo.GetCompetitionsExamById(id);
-                if (comE == null)
+                var comU = await _comURepo.GetCompetitionUserById(id);
+                if (comU == null)
                     return NotFound();
 
-                await _comERepo.DeleteCompetitionExam(id);
+                await _comURepo.DeleteCompetitionsUser(id);
                 return Ok();
             }
             catch (Exception ex)

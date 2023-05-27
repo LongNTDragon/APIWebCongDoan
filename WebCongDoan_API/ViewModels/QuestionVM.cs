@@ -6,7 +6,7 @@
         public string? QuesDetail { get; set; }
         public string? AnsOfQues { get; set; }
         public string? TrueAnswer { get; set; }
-        public int ComId { get; set; }
         public int ExamId { get; set; }
+        public int QuesTId { get; set; }
     }
 }

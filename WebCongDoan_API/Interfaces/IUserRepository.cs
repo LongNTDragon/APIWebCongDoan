@@ -6,6 +6,10 @@ namespace WebCongDoan_API.Interfaces
     {
         public Task<List<UserVM>> GetAllUsers();
 
+        public Task<List<UserVM>> GetAllUsersByRoleID(int id);
+
+        public Task<List<UserVM>> GetAllUsersByDepID(int id);
+
         public Task<UserVM> GetUserById(string id);
 
         public Task AddUser(RegisterVM registerVM);

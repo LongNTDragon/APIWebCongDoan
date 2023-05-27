@@ -7,6 +7,8 @@ namespace WebCongDoan_API.Interfaces
     {
         public Task<List<CompetitionsPrizeVM>> GetAllCompetitionsPrizes();
 
+        public Task<List<CompetitionsPrizeVM>> GetAllCompetitionsPrizesByComID(int id);
+
         public Task<CompetitionsPrizeVM> GetCompetitionsPrizeById(int id);
 
         public Task AddCompetitionsPrize(CompetitionsPrizeVM comPVM);

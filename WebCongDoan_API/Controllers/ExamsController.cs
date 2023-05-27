@@ -1,20 +1,19 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebCongDoan_API.Interfaces;
-using WebCongDoan_API.Models;
 using WebCongDoan_API.ViewModels;
 
 namespace WebCongDoan_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CompetitionsExamsController : ControllerBase
+    public class ExamsController : ControllerBase
     {
-        private readonly ICompetitionsExamRepository _comERepo;
+        private readonly IExamRepository _examRepo;
 
-        public CompetitionsExamsController(ICompetitionsExamRepository repo) 
-        { 
-            _comERepo = repo;
+        public ExamsController(IExamRepository repo)
+        {
+            _examRepo = repo;
         }
 
         [HttpGet]
@@ -22,7 +21,7 @@ namespace WebCongDoan_API.Controllers
         {
             try
             {
-                return Ok(await _comERepo.GetAllCompetitionsExams());
+                return Ok(await _examRepo.GetAllExams());
             }
             catch (Exception ex)
             {
@@ -30,16 +29,13 @@ namespace WebCongDoan_API.Controllers
             }
         }
 
-        [HttpGet("GetAllByComID")]
-        public async Task<IActionResult> Get(int id)
+        [HttpGet("GetById")]
+        public async Task<IActionResult> GetById(int id)
         {
             try
             {
-                var comE = await _comERepo.GetCompetitionsExamByComId(id);
-                if (comE == null)
-                    return NotFound();
-
-                return Ok(await _comERepo.GetAllCompetitionsExamsByComID(id));
+                var exam = await _examRepo.GetExamById(id);
+                return exam == null ? NotFound() : Ok(exam);
             }
             catch (Exception ex)
             {
@@ -48,12 +44,12 @@ namespace WebCongDoan_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Insert(CompetitionsExamVM comEVM)
+        public async Task<IActionResult> Insert(ExamVM examVM)
         {
             try
             {
-                await _comERepo.AddCompetitionsExam(comEVM);
-                return StatusCode(StatusCodes.Status201Created, comEVM);
+                await _examRepo.AddExam(examVM);
+                return StatusCode(StatusCodes.Status201Created, examVM);
             }
             catch (Exception ex)
             {
@@ -62,16 +58,16 @@ namespace WebCongDoan_API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update(CompetitionsExamVM comEVM)
+        public async Task<IActionResult> Update(ExamVM examVM)
         {
             try
             {
-                var comE = await _comERepo.GetCompetitionsExamById(comEVM.Ceid);
-                if (comE == null)
+                var exam = await _examRepo.GetExamById(examVM.ExamId);
+                if (exam == null)
                     return NotFound();
 
-                await _comERepo.UpdateCompetitionsExam(comE);
-                return Ok(comE);
+                await _examRepo.UpdateExam(examVM);
+                return Ok(examVM);
             }
             catch (Exception ex)
             {
@@ -84,11 +80,11 @@ namespace WebCongDoan_API.Controllers
         {
             try
             {
-                var comE = await _comERepo.GetCompetitionsExamById(id);
-                if (comE == null)
+                var exam = await _examRepo.GetExamById(id);
+                if (exam == null)
                     return NotFound();
 
-                await _comERepo.DeleteCompetitionExam(id);
+                await _examRepo.DeleteExam(id);
                 return Ok();
             }
             catch (Exception ex)

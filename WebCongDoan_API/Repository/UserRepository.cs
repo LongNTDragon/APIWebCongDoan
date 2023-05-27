@@ -37,6 +37,18 @@ namespace WebCongDoan_API.Repository
             return _mapper.Map<List<UserVM>>(users);
         }
 
+        public async Task<List<UserVM>> GetAllUsersByDepID(int id)
+        {
+            var users = await _context.Users.Where(u=>u.DepId == id).ToListAsync();
+            return _mapper.Map<List<UserVM>>(users);
+        }
+
+        public async Task<List<UserVM>> GetAllUsersByRoleID(int id)
+        {
+            var users = await _context.Users.Where(u => u.RoleId == id).ToListAsync();
+            return _mapper.Map<List<UserVM>>(users);
+        }
+
         public async Task<LoginVM> GetUserByEmailAndPass(LoginVM loginVM)
         {
             var user = _context.Users.SingleOrDefault(u=>u.Email == loginVM.Email && u.Password == loginVM.Password);
@@ -55,7 +67,5 @@ namespace WebCongDoan_API.Repository
             _context.Users.Update(user);
             await _context.SaveChangesAsync();
         }
-
-
     }
 }

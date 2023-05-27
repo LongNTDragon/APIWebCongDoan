@@ -29,13 +29,16 @@ namespace WebCongDoan_API.Controllers
             }
         }
 
-        [HttpGet("GetByQuesId")]
-        public async Task<IActionResult> GetByQuesId(int id)
+        [HttpGet("GetAllByExamID")]
+        public async Task<IActionResult> GetAllByExamID(int id)
         {
             try
             {
-                var ques = await _quesRepo.GetQuestionByQuesId(id);
-                return ques == null ? NotFound() : Ok(ques);
+                var quess = await _quesRepo.GetQuestionByExamId(id);
+                if(quess == null)
+                    return NotFound();
+
+                return Ok(await _quesRepo.GetAllQuestionByExamId(id));
             }
             catch (Exception ex)
             {
@@ -43,12 +46,13 @@ namespace WebCongDoan_API.Controllers
             }
         }
 
-        [HttpGet("GetByComId")]
-        public async Task<IActionResult> GetByComId(int id)
+        [HttpGet("GetByQuesId")]
+        public async Task<IActionResult> GetByQuesId(int id)
         {
             try
             {
-                return Ok(await _quesRepo.GetQuestionByComId(id));
+                var ques = await _quesRepo.GetQuestionByQuesId(id);
+                return ques == null ? NotFound() : Ok(ques);
             }
             catch (Exception ex)
             {

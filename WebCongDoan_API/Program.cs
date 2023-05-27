@@ -30,6 +30,12 @@ builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
 builder.Services.AddScoped<ICompetitionsExamRepository, CompetitionsExamRepository>();
 builder.Services.AddScoped<IPrizeTypeRepository, PrizeTypeRepository>();
 builder.Services.AddScoped<IPrizeRepository, PrizeRepository>();
+builder.Services.AddScoped<IQuestionTypeRepository, QuestionTypeRepository>();
+builder.Services.AddScoped<IExamRepository, ExamRepository>();
+builder.Services.AddScoped<IResultRepository, ResultRepository>();
+builder.Services.AddScoped<ICompetitionsUserRepository, CompetitionsUserRepository>();
+builder.Services.AddScoped<IPickerQuestionRepository, PickerQuestionRepository>();
+
 
 var app = builder.Build();
 

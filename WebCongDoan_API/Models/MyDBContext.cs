@@ -23,6 +23,7 @@ namespace WebCongDoan_API.Models
         public virtual DbSet<Department> Departments { get; set; } = null!;
         public virtual DbSet<Image> Images { get; set; } = null!;
         public virtual DbSet<PickerQuestion> PickerQuestions { get; set; } = null!;
+        public virtual DbSet<QuestionType> QuestionTypes { get; set; } = null!;
         public virtual DbSet<Question> Questions { get; set; } = null!;
         public virtual DbSet<Result> Results { get; set; } = null!;
         public virtual DbSet<Role> Roles { get; set; } = null!;
@@ -191,6 +192,8 @@ namespace WebCongDoan_API.Models
 
                 entity.Property(e => e.QuesId).HasColumnName("QuesID");
 
+                entity.Property(e => e.Answer).HasColumnType("text");
+
                 entity.HasOne(d => d.Cu)
                     .WithMany(p => p.PickerQuestions)
                     .HasForeignKey(d => d.Cuid)
@@ -213,6 +216,16 @@ namespace WebCongDoan_API.Models
                     .IsUnicode(false);
             });
 
+            modelBuilder.Entity<QuestionType>(entity =>
+            {
+                entity.HasKey(e => e.QuesTId)
+                    .HasName("PK__QuestionType");
+
+                entity.Property(e => e.QuesTId).HasColumnName("QuesTID");
+
+                entity.Property(e => e.QuesTName).HasMaxLength(255);
+            });
+
             modelBuilder.Entity<Question>(entity =>
             {
                 entity.HasKey(e => e.QuesId)
@@ -222,25 +235,25 @@ namespace WebCongDoan_API.Models
 
                 entity.Property(e => e.AnsOfQues).HasColumnType("text");
 
-                entity.Property(e => e.ComId).HasColumnName("ComID");
-
                 entity.Property(e => e.ExamId).HasColumnName("ExamID");
+
+                entity.Property(e => e.QuesTId).HasColumnName("QuesTID");
 
                 entity.Property(e => e.QuesDetail).HasColumnType("text");
 
                 entity.Property(e => e.TrueAnswer).HasColumnType("text");
-
-                entity.HasOne(d => d.Com)
-                    .WithMany(p => p.Questions)
-                    .HasForeignKey(d => d.ComId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Questions_Competitions");
 
                 entity.HasOne(d => d.Exa)
                     .WithMany(p => p.Questions)
                     .HasForeignKey(d => d.ExamId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Questions_Exams");
+
+                entity.HasOne(d => d.QuesT)
+                    .WithMany(p => p.Questions)
+                    .HasForeignKey(d => d.QuesTId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Questions_QuestionTypes");
             });
 
             modelBuilder.Entity<Result>(entity =>

@@ -1,20 +1,19 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebCongDoan_API.Interfaces;
-using WebCongDoan_API.Models;
 using WebCongDoan_API.ViewModels;
 
 namespace WebCongDoan_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CompetitionsPrizesController : ControllerBase
+    public class PickerQuestionsController : ControllerBase
     {
-        private readonly ICompetitionsPrizeRepository _comPriRepo;
+        private readonly IPickerQuestionRepository _pickRepo;
 
-        public CompetitionsPrizesController(ICompetitionsPrizeRepository repo)
+        public PickerQuestionsController(IPickerQuestionRepository repo)
         {
-            _comPriRepo = repo;
+            _pickRepo = repo;
         }
 
         [HttpGet]
@@ -22,7 +21,7 @@ namespace WebCongDoan_API.Controllers
         {
             try
             {
-                return Ok(await _comPriRepo.GetAllCompetitionsPrizes());
+                return Ok(await _pickRepo.GetAllPickerQuestions());
             }
             catch (Exception ex)
             {
@@ -30,12 +29,12 @@ namespace WebCongDoan_API.Controllers
             }
         }
 
-        [HttpGet("GetAllByComID")]
-        public async Task<IActionResult> GetAllByComID(int id)
+        [HttpGet("GetAllByComUserId")]
+        public async Task<IActionResult> GetAllByCUId(int id)
         {
             try
             {
-                return Ok(await _comPriRepo.GetAllCompetitionsPrizesByComID(id));
+                return Ok(await _pickRepo.GetAllPickerQuestionsByCUId(id));
             }
             catch (Exception ex)
             {
@@ -48,8 +47,8 @@ namespace WebCongDoan_API.Controllers
         {
             try
             {
-                var comPri = await _comPriRepo.GetCompetitionsPrizeById(id);
-                return comPri == null ? NotFound() : Ok(comPri);
+                var pickQ = await _pickRepo.GetPickerQuestionById(id);
+                return pickQ == null ? NotFound() : Ok(pickQ);
             }
             catch (Exception ex)
             {
@@ -58,12 +57,12 @@ namespace WebCongDoan_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Insert(CompetitionsPrizeVM comPVM)
+        public async Task<IActionResult> Insert(PickerQuestionVM pickQVM)
         {
             try
             {
-                await _comPriRepo.AddCompetitionsPrize(comPVM);
-                return StatusCode(StatusCodes.Status201Created, comPVM);
+                await _pickRepo.AddPickerQuestion(pickQVM);
+                return StatusCode(StatusCodes.Status201Created, pickQVM);
             }
             catch (Exception ex)
             {
@@ -72,16 +71,16 @@ namespace WebCongDoan_API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update(CompetitionsPrizeVM comPVM)
+        public async Task<IActionResult> Update(PickerQuestionVM pickQVM)
         {
             try
             {
-                var comPri = await _comPriRepo.GetCompetitionsPrizeById(comPVM.Cpid);
-                if (comPri == null)
+                var pickQ = await _pickRepo.GetPickerQuestionById(pickQVM.Pqid);
+                if (pickQ == null)
                     return NotFound();
 
-                await _comPriRepo.UpdateCompetitionsPrize(comPVM);
-                return Ok(comPVM);
+                await _pickRepo.UpdatePickerQuestion(pickQVM);
+                return Ok(pickQVM);
             }
             catch (Exception ex)
             {
@@ -94,11 +93,11 @@ namespace WebCongDoan_API.Controllers
         {
             try
             {
-                var comPri = await _comPriRepo.GetCompetitionsPrizeById(id);
-                if (comPri == null)
+                var pickQ = await _pickRepo.GetPickerQuestionById(id);
+                if (pickQ == null)
                     return NotFound();
 
-                await _comPriRepo.DeleteCompetitionsPrize(id);
+                await _pickRepo.DeletePickerQuestion(id);
                 return Ok();
             }
             catch (Exception ex)

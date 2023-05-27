@@ -37,6 +37,12 @@ namespace WebCongDoan_API.Repository
             return _mapper.Map<List<CompetitionsPrizeVM>>(comPris);
         }
 
+        public async Task<List<CompetitionsPrizeVM>> GetAllCompetitionsPrizesByComID(int id)
+        {
+            var comPris = await _context.CompetitionsPrizes.Where(cp => cp.ComId == id).ToListAsync();
+            return _mapper.Map<List<CompetitionsPrizeVM>>(comPris);
+        }
+
         public async Task<CompetitionsPrizeVM> GetCompetitionsPrizeById(int id)
         {
             var comPri = await _context.CompetitionsPrizes.FindAsync(id);

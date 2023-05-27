@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebCongDoan_API.Models;
 
@@ -11,9 +12,10 @@ using WebCongDoan_API.Models;
 namespace WebCongDoan_API.Migrations
 {
     [DbContext(typeof(MyDBContext))]
-    partial class MyDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230527082007_Add_TblQuestionType")]
+    partial class Add_TblQuestionType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -303,9 +305,6 @@ namespace WebCongDoan_API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Pqid"), 1L, 1);
 
-                    b.Property<string>("Answer")
-                        .HasColumnType("text");
-
                     b.Property<int>("Cuid")
                         .HasColumnType("int")
                         .HasColumnName("CUID");
@@ -375,6 +374,10 @@ namespace WebCongDoan_API.Migrations
                     b.Property<string>("AnsOfQues")
                         .HasColumnType("text");
 
+                    b.Property<int>("ComId")
+                        .HasColumnType("int")
+                        .HasColumnName("ComID");
+
                     b.Property<int>("ExamId")
                         .HasColumnType("int")
                         .HasColumnName("ExamID");
@@ -391,6 +394,8 @@ namespace WebCongDoan_API.Migrations
 
                     b.HasKey("QuesId")
                         .HasName("PK__Question__5F3F5F149F60A4ED");
+
+                    b.HasIndex("ComId");
 
                     b.HasIndex("ExamId");
 
@@ -687,6 +692,12 @@ namespace WebCongDoan_API.Migrations
 
             modelBuilder.Entity("WebCongDoan_API.Models.Question", b =>
                 {
+                    b.HasOne("WebCongDoan_API.Models.Competition", "Com")
+                        .WithMany("Questions")
+                        .HasForeignKey("ComId")
+                        .IsRequired()
+                        .HasConstraintName("FK_Questions_Competitions");
+
                     b.HasOne("WebCongDoan_API.Models.Exam", "Exa")
                         .WithMany("Questions")
                         .HasForeignKey("ExamId")
@@ -698,6 +709,8 @@ namespace WebCongDoan_API.Migrations
                         .HasForeignKey("QuesTId")
                         .IsRequired()
                         .HasConstraintName("FK_Questions_QuestionTypes");
+
+                    b.Navigation("Com");
 
                     b.Navigation("Exa");
 
@@ -769,6 +782,8 @@ namespace WebCongDoan_API.Migrations
                     b.Navigation("CompetitionsPrizes");
 
                     b.Navigation("CompetitionsUsers");
+
+                    b.Navigation("Questions");
                 });
 
             modelBuilder.Entity("WebCongDoan_API.Models.CompetitionsUser", b =>
