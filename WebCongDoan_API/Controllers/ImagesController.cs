@@ -1,31 +1,28 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using AutoMapper;
-using WebCongDoan_API.Models;
-using WebCongDoan_API.ViewModels;
 using WebCongDoan_API.Interfaces;
+using WebCongDoan_API.ViewModels;
 
 namespace WebCongDoan_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BlogsController : ControllerBase
+    public class ImagesController : ControllerBase
     {
-        private IBlogRepository _blogRepo;
+        private readonly IImageRepository _imgRepo;
 
-        public BlogsController(IBlogRepository repo) 
+        public ImagesController(IImageRepository repo)
         {
-            _blogRepo = repo;
+            _imgRepo = repo;
         }
-
         [HttpGet]
         public async Task<IActionResult> Get()
         {
             try
             {
-                return Ok(await _blogRepo.GetAllBlog());
-            }catch (Exception ex)
+                return Ok(await _imgRepo.GetAllImage());
+            }
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -36,21 +33,22 @@ namespace WebCongDoan_API.Controllers
         {
             try
             {
-                var blog = await _blogRepo.GetBlogById(id);
-                return blog == null ? NotFound() : Ok(blog);
+                var img = await _imgRepo.GetImageById(id);
+                return img == null ? NotFound() : Ok(img);
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
         }
+
         [HttpPost]
-        public async Task<IActionResult> Insert(BlogVM blogVM)
+        public async Task<IActionResult> Insert(ImageVM imgVM)
         {
             try
             {
-                await _blogRepo.AddBlog(blogVM);
-                return StatusCode(StatusCodes.Status201Created, blogVM);
+                await _imgRepo.AddImage(imgVM);
+                return StatusCode(StatusCodes.Status201Created, imgVM);
             }
             catch (Exception ex)
             {
@@ -59,16 +57,16 @@ namespace WebCongDoan_API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update(BlogVM blogVM)
+        public async Task<IActionResult> Update(ImageVM imgVM)
         {
             try
             {
-                var blog = await _blogRepo.GetBlogById(blogVM.BlogId);
-                if (blog == null)
+                var img = await _imgRepo.GetImageById(imgVM.ImgId);
+                if (img == null)
                     return NotFound();
 
-                await _blogRepo.UpdateBlog(blogVM);
-                return Ok(blogVM);
+                await _imgRepo.UpdateImage(imgVM);
+                return Ok(imgVM);
             }
             catch (Exception ex)
             {
@@ -81,11 +79,11 @@ namespace WebCongDoan_API.Controllers
         {
             try
             {
-                var blog = await _blogRepo.GetBlogById(id);
-                if (blog == null)
+                var img = await _imgRepo.GetImageById(id);
+                if (img == null)
                     return NotFound();
 
-                await _blogRepo.DeleteBlog(id);
+                await _imgRepo.DeleteImage(id);
                 return Ok();
             }
             catch (Exception ex)

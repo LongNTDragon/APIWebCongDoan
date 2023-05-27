@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using WebCongDoan_API.Models;
 using WebCongDoan_API.Interfaces;
 using WebCongDoan_API.ViewModels;
+
 namespace WebCongDoan_API.Repository
 {
     public class BlogRepository:IBlogRepository
@@ -17,7 +18,7 @@ namespace WebCongDoan_API.Repository
         }
         public async Task AddBlog(BlogVM blogVM)
         {
-            var blog = _mapper.Map<BlogVM>(blogVM);
+            var blog = _mapper.Map<Blog>(blogVM);
             _context.Blogs.Add(blog);
             await _context.SaveChangesAsync();
         }
