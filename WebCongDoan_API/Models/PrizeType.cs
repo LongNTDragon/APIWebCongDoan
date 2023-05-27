@@ -4,12 +4,12 @@
     {
         public PrizeType()
         {
-            Prizes = new HashSet<Prize>();
+            CompetitionsPrizes = new HashSet<CompetitionsPrize>();
         }
 
         public int PriTid { get; set; }
         public string? PriTname { get; set; }
 
-        public virtual ICollection<Prize> Prizes { get; set; }
+        public virtual ICollection<CompetitionsPrize> CompetitionsPrizes { get; set; }
     }
 }

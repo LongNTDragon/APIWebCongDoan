@@ -1,28 +1,26 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebCongDoan_API.Interfaces;
-using WebCongDoan_API.Models;
 using WebCongDoan_API.ViewModels;
 
 namespace WebCongDoan_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CompetitionsPrizesController : ControllerBase
+    public class PrizeTypesController : ControllerBase
     {
-        private readonly ICompetitionsPrizeRepository _comPriRepo;
+        private readonly IPrizeTypeRepository _priTRepo;
 
-        public CompetitionsPrizesController(ICompetitionsPrizeRepository repo)
+        public PrizeTypesController(IPrizeTypeRepository repo) 
         {
-            _comPriRepo = repo;
+            _priTRepo = repo;
         }
-
         [HttpGet]
         public async Task<IActionResult> Get()
         {
             try
             {
-                return Ok(await _comPriRepo.GetAllCompetitionsPrizes());
+                return Ok(await _priTRepo.GetAllPrizeTypes());
             }
             catch (Exception ex)
             {
@@ -35,8 +33,8 @@ namespace WebCongDoan_API.Controllers
         {
             try
             {
-                var comPri = await _comPriRepo.GetCompetitionsPrizeById(id);
-                return comPri == null ? NotFound() : Ok(comPri);
+                var priT = await _priTRepo.GetPrizeTypeById(id);
+                return priT == null ? NotFound() : Ok(priT);
             }
             catch (Exception ex)
             {
@@ -45,12 +43,12 @@ namespace WebCongDoan_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Insert(CompetitionsPrizeVM comPVM)
+        public async Task<IActionResult> Insert(PrizeTypeVM priTVM)
         {
             try
             {
-                await _comPriRepo.AddCompetitionsPrize(comPVM);
-                return StatusCode(StatusCodes.Status201Created, comPVM);
+                await _priTRepo.AddPrizeType(priTVM);
+                return StatusCode(StatusCodes.Status201Created, priTVM);
             }
             catch (Exception ex)
             {
@@ -59,16 +57,16 @@ namespace WebCongDoan_API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update(CompetitionsPrizeVM comPVM)
+        public async Task<IActionResult> Update(PrizeTypeVM priTVM)
         {
             try
             {
-                var comPri = await _comPriRepo.GetCompetitionsPrizeById(comPVM.Cpid);
-                if (comPri == null)
+                var priT = await _priTRepo.GetPrizeTypeById(priTVM.PriTid);
+                if (priT == null)
                     return NotFound();
 
-                await _comPriRepo.UpdateCompetitionsPrize(comPVM);
-                return Ok(comPVM);
+                await _priTRepo.UpdatePrizeType(priTVM);
+                return Ok(priTVM);
             }
             catch (Exception ex)
             {
@@ -81,11 +79,11 @@ namespace WebCongDoan_API.Controllers
         {
             try
             {
-                var comPri = await _comPriRepo.GetCompetitionsPrizeById(id);
-                if (comPri == null)
+                var priT = await _priTRepo.GetPrizeTypeById(id);
+                if (priT == null)
                     return NotFound();
 
-                await _comPriRepo.DeleteCompetitionsPrize(id);
+                await _priTRepo.DeletePrizeType(id);
                 return Ok();
             }
             catch (Exception ex)

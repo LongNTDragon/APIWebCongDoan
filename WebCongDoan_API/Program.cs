@@ -26,6 +26,10 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
 builder.Services.AddScoped<ICompetitionRepository, CompetitionRepository>();
 builder.Services.AddScoped<ICompetitionsPrizeRepository, CompetitionsPrizeRepositoty>();
+builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
+builder.Services.AddScoped<ICompetitionsExamRepository, CompetitionsExamRepository>();
+builder.Services.AddScoped<IPrizeTypeRepository, PrizeTypeRepository>();
+builder.Services.AddScoped<IPrizeRepository, PrizeRepository>();
 
 var app = builder.Build();
 

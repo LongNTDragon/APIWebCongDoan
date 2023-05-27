@@ -8,13 +8,13 @@ namespace WebCongDoan_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CompetitionsPrizesController : ControllerBase
+    public class CompetitionsExamsController : ControllerBase
     {
-        private readonly ICompetitionsPrizeRepository _comPriRepo;
+        private readonly ICompetitionsExamRepository _comERepo;
 
-        public CompetitionsPrizesController(ICompetitionsPrizeRepository repo)
-        {
-            _comPriRepo = repo;
+        public CompetitionsExamsController(ICompetitionsExamRepository repo) 
+        { 
+            _comERepo = repo;
         }
 
         [HttpGet]
@@ -22,7 +22,20 @@ namespace WebCongDoan_API.Controllers
         {
             try
             {
-                return Ok(await _comPriRepo.GetAllCompetitionsPrizes());
+                return Ok(await _comERepo.GetAllompetitionsExams());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("GetAllByComID")]
+        public async Task<IActionResult> Get(int id)
+        {
+            try
+            {
+                return Ok(await _comERepo.GetAllompetitionsExamsByComID(id));
             }
             catch (Exception ex)
             {
@@ -35,8 +48,8 @@ namespace WebCongDoan_API.Controllers
         {
             try
             {
-                var comPri = await _comPriRepo.GetCompetitionsPrizeById(id);
-                return comPri == null ? NotFound() : Ok(comPri);
+                var comE = await _comERepo.GetCompetitionsExamById(id);
+                return comE == null ? NotFound() : Ok(comE);
             }
             catch (Exception ex)
             {
@@ -45,12 +58,12 @@ namespace WebCongDoan_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Insert(CompetitionsPrizeVM comPVM)
+        public async Task<IActionResult> Insert(CompetitionsExamVM comEVM)
         {
             try
             {
-                await _comPriRepo.AddCompetitionsPrize(comPVM);
-                return StatusCode(StatusCodes.Status201Created, comPVM);
+                await _comERepo.AddCompetitionsExam(comEVM);
+                return StatusCode(StatusCodes.Status201Created, comEVM);
             }
             catch (Exception ex)
             {
@@ -59,16 +72,16 @@ namespace WebCongDoan_API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update(CompetitionsPrizeVM comPVM)
+        public async Task<IActionResult> Update(CompetitionsExamVM comEVM)
         {
             try
             {
-                var comPri = await _comPriRepo.GetCompetitionsPrizeById(comPVM.Cpid);
-                if (comPri == null)
+                var comE = await _comERepo.GetCompetitionsExamById(comEVM.Ceid);
+                if (comE == null)
                     return NotFound();
 
-                await _comPriRepo.UpdateCompetitionsPrize(comPVM);
-                return Ok(comPVM);
+                await _comERepo.UpdateCompetitionsExam(comE);
+                return Ok(comE);
             }
             catch (Exception ex)
             {
@@ -81,11 +94,11 @@ namespace WebCongDoan_API.Controllers
         {
             try
             {
-                var comPri = await _comPriRepo.GetCompetitionsPrizeById(id);
-                if (comPri == null)
+                var comE = await _comERepo.GetCompetitionsExamById(id);
+                if (comE == null)
                     return NotFound();
 
-                await _comPriRepo.DeleteCompetitionsPrize(id);
+                await _comERepo.DeleteCompetitionExam(id);
                 return Ok();
             }
             catch (Exception ex)

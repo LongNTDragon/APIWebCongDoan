@@ -1,4 +1,5 @@
-﻿using WebCongDoan_API.ViewModels;
+﻿using WebCongDoan_API.Models;
+using WebCongDoan_API.ViewModels;
 
 namespace WebCongDoan_API.Interfaces
 {

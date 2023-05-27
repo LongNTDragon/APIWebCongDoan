@@ -1,0 +1,109 @@
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using WebCongDoan_API.Interfaces;
+using WebCongDoan_API.ViewModels;
+
+namespace WebCongDoan_API.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class QuestionsController : ControllerBase
+    {
+        private readonly IQuestionRepository _quesRepo;
+
+        public QuestionsController(IQuestionRepository repo) 
+        {
+            _quesRepo = repo;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            try
+            {
+                return Ok(await _quesRepo.GetAllQuestions());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("GetByQuesId")]
+        public async Task<IActionResult> GetByQuesId(int id)
+        {
+            try
+            {
+                var ques = await _quesRepo.GetQuestionByQuesId(id);
+                return ques == null ? NotFound() : Ok(ques);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("GetByComId")]
+        public async Task<IActionResult> GetByComId(int id)
+        {
+            try
+            {
+                return Ok(await _quesRepo.GetQuestionByComId(id));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Insert(QuestionVM quesVM)
+        {
+            try
+            {
+                await _quesRepo.AddQuestion(quesVM);
+                return StatusCode(StatusCodes.Status201Created, quesVM);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Update(QuestionVM quesVM)
+        {
+            try
+            {
+                var ques = await _quesRepo.GetQuestionByQuesId(quesVM.QuesId);
+                if (ques == null)
+                    return NotFound();
+
+                await _quesRepo.UpdateQuestion(quesVM);
+                return Ok(quesVM);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                var ques = await _quesRepo.GetQuestionByQuesId(id);
+                if (ques == null)
+                    return NotFound();
+
+                await _quesRepo.DeleteQuestion(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+    }
+}

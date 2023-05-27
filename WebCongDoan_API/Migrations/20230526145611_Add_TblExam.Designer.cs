@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebCongDoan_API.Models;
 
@@ -11,9 +12,10 @@ using WebCongDoan_API.Models;
 namespace WebCongDoan_API.Migrations
 {
     [DbContext(typeof(MyDBContext))]
-    partial class MyDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230526145611_Add_TblExam")]
+    partial class Add_TblExam
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -131,33 +133,6 @@ namespace WebCongDoan_API.Migrations
                     b.ToTable("Competitions_Blogs_Users", (string)null);
                 });
 
-            modelBuilder.Entity("WebCongDoan_API.Models.CompetitionsExam", b =>
-                {
-                    b.Property<int>("Ceid")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("CEID");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Ceid"), 1L, 1);
-
-                    b.Property<int>("ComId")
-                        .HasColumnType("int")
-                        .HasColumnName("ComID");
-
-                    b.Property<int>("ExamId")
-                        .HasColumnType("int")
-                        .HasColumnName("ExamID");
-
-                    b.HasKey("Ceid")
-                        .HasName("PK__CompetitionsExam");
-
-                    b.HasIndex("ComId");
-
-                    b.HasIndex("ExamId");
-
-                    b.ToTable("Competitions_Exams", (string)null);
-                });
-
             modelBuilder.Entity("WebCongDoan_API.Models.CompetitionsPrize", b =>
                 {
                     b.Property<int>("Cpid")
@@ -175,10 +150,6 @@ namespace WebCongDoan_API.Migrations
                         .HasColumnType("int")
                         .HasColumnName("PriID");
 
-                    b.Property<int>("PriTid")
-                        .HasColumnType("int")
-                        .HasColumnName("PriTID");
-
                     b.Property<string>("PrizeDetail")
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
@@ -193,8 +164,6 @@ namespace WebCongDoan_API.Migrations
                     b.HasIndex("ComId");
 
                     b.HasIndex("PriId");
-
-                    b.HasIndex("PriTid");
 
                     b.ToTable("Competitions_Prizes", (string)null);
                 });
@@ -334,8 +303,14 @@ namespace WebCongDoan_API.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
+                    b.Property<int>("PriTid")
+                        .HasColumnType("int")
+                        .HasColumnName("PriTID");
+
                     b.HasKey("PriId")
                         .HasName("PK__Prizes__60886EEF679A18F8");
+
+                    b.HasIndex("PriTid");
 
                     b.ToTable("Prizes");
                 });
@@ -578,25 +553,6 @@ namespace WebCongDoan_API.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("WebCongDoan_API.Models.CompetitionsExam", b =>
-                {
-                    b.HasOne("WebCongDoan_API.Models.Competition", "Com")
-                        .WithMany("CompetitionsExams")
-                        .HasForeignKey("ComId")
-                        .IsRequired()
-                        .HasConstraintName("FK_Competitions_Exams_Competitions");
-
-                    b.HasOne("WebCongDoan_API.Models.Exam", "Exa")
-                        .WithMany("CompetitionsExams")
-                        .HasForeignKey("ExamId")
-                        .IsRequired()
-                        .HasConstraintName("Fk_Competitions_Exams_Exams");
-
-                    b.Navigation("Com");
-
-                    b.Navigation("Exa");
-                });
-
             modelBuilder.Entity("WebCongDoan_API.Models.CompetitionsPrize", b =>
                 {
                     b.HasOne("WebCongDoan_API.Models.Competition", "Com")
@@ -611,17 +567,9 @@ namespace WebCongDoan_API.Migrations
                         .IsRequired()
                         .HasConstraintName("Fk_Competitions_Prizes_Prizes");
 
-                    b.HasOne("WebCongDoan_API.Models.PrizeType", "PriT")
-                        .WithMany("CompetitionsPrizes")
-                        .HasForeignKey("PriTid")
-                        .IsRequired()
-                        .HasConstraintName("FK_Competitions_Prizes_PrizeTypes");
-
                     b.Navigation("Com");
 
                     b.Navigation("Pri");
-
-                    b.Navigation("PriT");
                 });
 
             modelBuilder.Entity("WebCongDoan_API.Models.CompetitionsUser", b =>
@@ -660,6 +608,17 @@ namespace WebCongDoan_API.Migrations
                     b.Navigation("Cu");
 
                     b.Navigation("Ques");
+                });
+
+            modelBuilder.Entity("WebCongDoan_API.Models.Prize", b =>
+                {
+                    b.HasOne("WebCongDoan_API.Models.PrizeType", "PriT")
+                        .WithMany("Prizes")
+                        .HasForeignKey("PriTid")
+                        .IsRequired()
+                        .HasConstraintName("FK_Prizes_PrizeTypes");
+
+                    b.Navigation("PriT");
                 });
 
             modelBuilder.Entity("WebCongDoan_API.Models.Question", b =>
@@ -741,8 +700,6 @@ namespace WebCongDoan_API.Migrations
                 {
                     b.Navigation("CompetitionsBlogsUsers");
 
-                    b.Navigation("CompetitionsExams");
-
                     b.Navigation("CompetitionsPrizes");
 
                     b.Navigation("CompetitionsUsers");
@@ -766,8 +723,6 @@ namespace WebCongDoan_API.Migrations
 
             modelBuilder.Entity("WebCongDoan_API.Models.Exam", b =>
                 {
-                    b.Navigation("CompetitionsExams");
-
                     b.Navigation("Questions");
                 });
 
@@ -785,7 +740,7 @@ namespace WebCongDoan_API.Migrations
 
             modelBuilder.Entity("WebCongDoan_API.Models.PrizeType", b =>
                 {
-                    b.Navigation("CompetitionsPrizes");
+                    b.Navigation("Prizes");
                 });
 
             modelBuilder.Entity("WebCongDoan_API.Models.Question", b =>
