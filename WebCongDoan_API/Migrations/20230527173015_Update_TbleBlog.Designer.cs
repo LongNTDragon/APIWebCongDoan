@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebCongDoan_API.Models;
 
@@ -11,9 +12,10 @@ using WebCongDoan_API.Models;
 namespace WebCongDoan_API.Migrations
 {
     [DbContext(typeof(MyDBContext))]
-    partial class MyDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230527173015_Update_TbleBlog")]
+    partial class Update_TbleBlog
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,15 +40,14 @@ namespace WebCongDoan_API.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<string>("ImgName")
+                    b.Property<int?>("ImgId")
                         .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("ImgSrc")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("int")
+                        .HasColumnName("ImgID");
 
                     b.HasKey("BlogId");
+
+                    b.HasIndex("ImgId");
 
                     b.ToTable("Blogs");
                 });
@@ -266,6 +267,32 @@ namespace WebCongDoan_API.Migrations
                     b.ToTable("Exams");
                 });
 
+            modelBuilder.Entity("WebCongDoan_API.Models.Image", b =>
+                {
+                    b.Property<int>("ImgId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("ImgID");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ImgId"), 1L, 1);
+
+                    b.Property<string>("ImgName")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("ImgSrc")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("ImgId")
+                        .HasName("PK__Images__352F541359595AB8");
+
+                    b.ToTable("Images");
+                });
+
             modelBuilder.Entity("WebCongDoan_API.Models.PickerQuestion", b =>
                 {
                     b.Property<int>("Pqid")
@@ -457,13 +484,10 @@ namespace WebCongDoan_API.Migrations
                         .HasColumnType("int")
                         .HasColumnName("BlogID");
 
-                    b.Property<string>("ImgName")
+                    b.Property<int?>("ImgId")
                         .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("ImgSrc")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("int")
+                        .HasColumnName("ImgID");
 
                     b.Property<string>("TagDetail")
                         .HasColumnType("text");
@@ -475,6 +499,8 @@ namespace WebCongDoan_API.Migrations
                     b.HasKey("TagId");
 
                     b.HasIndex("BlogId");
+
+                    b.HasIndex("ImgId");
 
                     b.ToTable("Tags");
                 });
@@ -524,6 +550,17 @@ namespace WebCongDoan_API.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("WebCongDoan_API.Models.Blog", b =>
+                {
+                    b.HasOne("WebCongDoan_API.Models.Image", "Img")
+                        .WithMany("Blogs")
+                        .HasForeignKey("ImgId")
+                        .IsRequired()
+                        .HasConstraintName("FK_Blogs_Images");
+
+                    b.Navigation("Img");
                 });
 
             modelBuilder.Entity("WebCongDoan_API.Models.Competition", b =>
@@ -686,7 +723,15 @@ namespace WebCongDoan_API.Migrations
                         .IsRequired()
                         .HasConstraintName("FK_Tags_Blogs");
 
+                    b.HasOne("WebCongDoan_API.Models.Image", "Img")
+                        .WithMany("Tags")
+                        .HasForeignKey("ImgId")
+                        .IsRequired()
+                        .HasConstraintName("FK_Tags_Images");
+
                     b.Navigation("Blog");
+
+                    b.Navigation("Img");
                 });
 
             modelBuilder.Entity("WebCongDoan_API.Models.User", b =>
@@ -745,6 +790,13 @@ namespace WebCongDoan_API.Migrations
                     b.Navigation("CompetitionsExams");
 
                     b.Navigation("Questions");
+                });
+
+            modelBuilder.Entity("WebCongDoan_API.Models.Image", b =>
+                {
+                    b.Navigation("Blogs");
+
+                    b.Navigation("Tags");
                 });
 
             modelBuilder.Entity("WebCongDoan_API.Models.Prize", b =>

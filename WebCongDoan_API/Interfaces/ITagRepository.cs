@@ -6,15 +6,13 @@ namespace WebCongDoan_API.Interfaces
     {
         public Task AddTag(TagVM tagVM);
 
-
         public Task DeleteTag(int id);
-
 
         public Task<List<TagVM>> GetAllTags();
 
+        public Task<List<TagVM>> GetAllTagsByBlogID(int id);
 
         public Task<TagVM> GetTagById(int id);
-
 
         public Task UpdateTag(TagVM tagVM);
         

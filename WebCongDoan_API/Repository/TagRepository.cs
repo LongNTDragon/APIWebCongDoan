@@ -33,8 +33,14 @@ namespace WebCongDoan_API.Repository
 
         public async Task<List<TagVM>> GetAllTags()
         {
-            var tag = await _context.Tags.ToListAsync();
-            return _mapper.Map<List<TagVM>>(tag);
+            var tags = await _context.Tags.ToListAsync();
+            return _mapper.Map<List<TagVM>>(tags);
+        }
+
+        public async Task<List<TagVM>> GetAllTagsByBlogID(int id)
+        {
+            var tags = await _context.Tags.Where(t => t.BlogId == id).ToListAsync();
+            return _mapper.Map<List<TagVM>>(tags);
         }
 
         public async Task<TagVM> GetTagById(int id)

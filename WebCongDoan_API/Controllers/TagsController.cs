@@ -29,6 +29,19 @@ namespace WebCongDoan_API.Controllers
             }
         }
 
+        [HttpGet("GetAllByBlogID")]
+        public async Task<IActionResult> GetAllByBlogID(int id)
+        {
+            try
+            {
+                return Ok(await _tagRepo.GetAllTagsByBlogID(id));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpGet("GetById")]
         public async Task<IActionResult> GetTagById(int id)
         {

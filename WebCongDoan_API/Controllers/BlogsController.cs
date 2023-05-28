@@ -12,7 +12,7 @@ namespace WebCongDoan_API.Controllers
     [ApiController]
     public class BlogsController : ControllerBase
     {
-        private IBlogRepository _blogRepo;
+        private readonly IBlogRepository _blogRepo;
 
         public BlogsController(IBlogRepository repo) 
         {
@@ -44,6 +44,7 @@ namespace WebCongDoan_API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
         [HttpPost]
         public async Task<IActionResult> Insert(BlogVM blogVM)
         {

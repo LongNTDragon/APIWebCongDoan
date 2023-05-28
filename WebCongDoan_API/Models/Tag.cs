@@ -8,10 +8,10 @@ namespace WebCongDoan_API.Models
         public int TagId { get; set; }
         public string? TagName { get; set; }
         public string? TagDetail { get; set; }
-        public int ImgId { get; set; }
+        public string ImgName { get; set; } = null!;
+        public string ImgSrc { get; set; } = null!;
         public int BlogId { get; set; }
 
         public virtual Blog Blog { get; set; } = null!;
-        public virtual Image Img { get; set; } = null!;
     }
 }

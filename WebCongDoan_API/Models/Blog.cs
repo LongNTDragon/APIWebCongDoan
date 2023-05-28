@@ -14,10 +14,9 @@ namespace WebCongDoan_API.Models
         public int BlogId { get; set; }
         public string? BlogName { get; set; }
         public string? BlogDetai { get; set; }
-        public int? TagId { get; set; }
-        public int ImgId { get; set; }
+        public string ImgName { get; set; } = null!;
+        public string ImgSrc { get; set; } = null!;
 
-        public virtual Image Img { get; set; } = null!;
         public virtual ICollection<CompetitionsBlogsUser> CompetitionsBlogsUsers { get; set; }
         public virtual ICollection<Tag> Tags { get; set; }
     }

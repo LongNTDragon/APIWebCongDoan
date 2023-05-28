@@ -7,20 +7,21 @@ namespace WebCongDoan_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ImagesController : ControllerBase
+    public class CompetitionsBlogsUsersController : ControllerBase
     {
-        private readonly IImageRepository _imgRepo;
+        private readonly ICompetitionsBlogsUserRepository _cbuRepo;
 
-        public ImagesController(IImageRepository repo)
+        public CompetitionsBlogsUsersController(ICompetitionsBlogsUserRepository repo)
         {
-            _imgRepo = repo;
+            _cbuRepo = repo;
         }
+
         [HttpGet]
         public async Task<IActionResult> Get()
         {
             try
             {
-                return Ok(await _imgRepo.GetAllImage());
+                return Ok(await _cbuRepo.GetAllComBlogUsers());
             }
             catch (Exception ex)
             {
@@ -33,8 +34,8 @@ namespace WebCongDoan_API.Controllers
         {
             try
             {
-                var img = await _imgRepo.GetImageById(id);
-                return img == null ? NotFound() : Ok(img);
+                var cbu = await _cbuRepo.GetComBlogUserById(id);
+                return cbu == null ? NotFound() : Ok(cbu);
             }
             catch (Exception ex)
             {
@@ -43,12 +44,12 @@ namespace WebCongDoan_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Insert(ImageVM imgVM)
+        public async Task<IActionResult> Insert(CompetitionsBlogsUserVM cbuVM)
         {
             try
             {
-                await _imgRepo.AddImage(imgVM);
-                return StatusCode(StatusCodes.Status201Created, imgVM);
+                await _cbuRepo.AddComBlogUser(cbuVM);
+                return StatusCode(StatusCodes.Status201Created, cbuVM);
             }
             catch (Exception ex)
             {
@@ -57,16 +58,16 @@ namespace WebCongDoan_API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update(ImageVM imgVM)
+        public async Task<IActionResult> Update(CompetitionsBlogsUserVM cbuVM)
         {
             try
             {
-                var img = await _imgRepo.GetImageById(imgVM.ImgId);
-                if (img == null)
+                var cbu = await _cbuRepo.GetComBlogUserById(cbuVM.Id);
+                if (cbu == null)
                     return NotFound();
 
-                await _imgRepo.UpdateImage(imgVM);
-                return Ok(imgVM);
+                await _cbuRepo.UpdateComBlogUser(cbuVM);
+                return Ok(cbuVM);
             }
             catch (Exception ex)
             {
@@ -79,11 +80,11 @@ namespace WebCongDoan_API.Controllers
         {
             try
             {
-                var img = await _imgRepo.GetImageById(id);
-                if (img == null)
+                var cbu = await _cbuRepo.GetComBlogUserById(id);
+                if (cbu == null)
                     return NotFound();
 
-                await _imgRepo.DeleteImage(id);
+                await _cbuRepo.DeleteComBlogUser(id);
                 return Ok();
             }
             catch (Exception ex)

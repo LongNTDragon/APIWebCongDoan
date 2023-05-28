@@ -5,8 +5,7 @@
         public int BlogId { get; set; }
         public string? BlogName { get; set; }
         public string? BlogDetai { get; set; }
-        public int? TagId { get; set; }
-        public int ImgId { get; set; }
-
+        public string ImgName { get; set; } = null!;
+        public string ImgSrc { get; set; } = null!;
     }
 }

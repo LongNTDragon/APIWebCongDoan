@@ -48,7 +48,5 @@ namespace WebCongDoan_API.Repository
             _context.Blogs.Update(blog);
             await _context.SaveChangesAsync();
         }
-        
-        
     }
 }

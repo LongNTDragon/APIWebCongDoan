@@ -21,7 +21,6 @@ namespace WebCongDoan_API.Models
         public virtual DbSet<CompetitionsBlogsUser> CompetitionsBlogsUsers { get; set; } = null!;
         public virtual DbSet<CompetitionsUser> CompetitionsUsers { get; set; } = null!;
         public virtual DbSet<Department> Departments { get; set; } = null!;
-        public virtual DbSet<Image> Images { get; set; } = null!;
         public virtual DbSet<PickerQuestion> PickerQuestions { get; set; } = null!;
         public virtual DbSet<QuestionType> QuestionTypes { get; set; } = null!;
         public virtual DbSet<Question> Questions { get; set; } = null!;
@@ -55,15 +54,9 @@ namespace WebCongDoan_API.Models
 
                 entity.Property(e => e.BlogName).HasMaxLength(255);
 
-                entity.Property(e => e.ImgId).HasColumnName("ImgID");
+                entity.Property(e => e.ImgName).HasColumnType("text");
 
-                entity.Property(e => e.TagId).HasColumnName("TagID");
-
-                entity.HasOne(d => d.Img)
-                    .WithMany(p => p.Blogs)
-                    .HasForeignKey(d => d.ImgId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Blogs_Images");
+                entity.Property(e => e.ImgSrc).HasColumnType("text");
             });
 
             modelBuilder.Entity<Competition>(entity =>
@@ -163,20 +156,6 @@ namespace WebCongDoan_API.Models
                 entity.Property(e => e.DepId).HasColumnName("DepID");
 
                 entity.Property(e => e.DepName).HasMaxLength(255);
-            });
-
-            modelBuilder.Entity<Image>(entity =>
-            {
-                entity.HasKey(e => e.ImgId)
-                    .HasName("PK__Images__352F541359595AB8");
-
-                entity.Property(e => e.ImgId).HasColumnName("ImgID");
-
-                entity.Property(e => e.ImgName).HasMaxLength(255);
-
-                entity.Property(e => e.ImgSrc)
-                    .HasMaxLength(255)
-                    .IsUnicode(false);
             });
 
             modelBuilder.Entity<PickerQuestion>(entity =>
@@ -291,7 +270,9 @@ namespace WebCongDoan_API.Models
 
                 entity.Property(e => e.BlogId).HasColumnName("BlogID");
 
-                entity.Property(e => e.ImgId).HasColumnName("ImgID");
+                entity.Property(e => e.ImgName).HasColumnType("text");
+
+                entity.Property(e => e.ImgSrc).HasColumnType("text");
 
                 entity.Property(e => e.TagDetail).HasColumnType("text");
 
@@ -302,12 +283,6 @@ namespace WebCongDoan_API.Models
                     .HasForeignKey(d => d.BlogId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Tags_Blogs");
-
-                entity.HasOne(d => d.Img)
-                    .WithMany(p => p.Tags)
-                    .HasForeignKey(d => d.ImgId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Tags_Images");
             });
 
             modelBuilder.Entity<User>(entity =>
