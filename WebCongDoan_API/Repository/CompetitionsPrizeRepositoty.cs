@@ -19,7 +19,13 @@ namespace WebCongDoan_API.Repository
 
         public async Task AddCompetitionsPrize(CompetitionsPrizeVM comPVM)
         {
-            var comPri = _mapper.Map<CompetitionsPrize>(comPVM);
+            var comPri = new CompetitionsPrize();
+            comPri.PriId = comPVM.PriId;
+            comPri.PriTid = comPVM.PriTid;
+            comPri.ComId = comPVM.ComId;
+            comPri.Quantity = comPVM.Quantity;
+            comPri.PrizeDetail = comPVM.PrizeDetail;
+
             _context.CompetitionsPrizes.Add(comPri);
             await _context.SaveChangesAsync();
         }
@@ -51,7 +57,13 @@ namespace WebCongDoan_API.Repository
 
         public async Task UpdateCompetitionsPrize(CompetitionsPrizeVM comPVM)
         {
-            var comPri = _mapper.Map<CompetitionsPrize>(comPVM);
+            var comPri = _context.CompetitionsPrizes.SingleOrDefault(c => c.Cpid == comPVM.Cpid);
+            comPri.PriId = comPVM.PriId;
+            comPri.PriTid = comPVM.PriTid;
+            comPri.ComId = comPVM.ComId;
+            comPri.Quantity = comPVM.Quantity;
+            comPri.PrizeDetail = comPVM.PrizeDetail;
+
             _context.CompetitionsPrizes.Update(comPri);
             await _context.SaveChangesAsync();
         }

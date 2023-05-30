@@ -19,7 +19,9 @@ namespace WebCongDoan_API.Repository
 
         public async Task AddPrizeType(PrizeTypeVM priTVM)
         {
-            var priT = _mapper.Map<PrizeType>(priTVM);
+            var priT = new PrizeType();
+            priT.PriTname = priTVM.PriTname;
+
             _context.PrizeTypes.Add(priT);
             await _context.SaveChangesAsync();
         }
@@ -45,7 +47,9 @@ namespace WebCongDoan_API.Repository
 
         public async Task UpdatePrizeType(PrizeTypeVM priTVM)
         {
-            var priT = _mapper.Map<PrizeType>(priTVM);
+            var priT = _context.PrizeTypes.SingleOrDefault(pt => pt.PriTid == priTVM.PriTid);
+            priT.PriTname = priTVM.PriTname;
+
             _context.PrizeTypes.Update(priT);
             await _context.SaveChangesAsync();
         }

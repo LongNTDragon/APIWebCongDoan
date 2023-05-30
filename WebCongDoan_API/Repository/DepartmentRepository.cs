@@ -19,7 +19,9 @@ namespace WebCongDoan_API.Repository
 
         public async Task AddDepartment(DepartmentVM depVM)
         {
-            var newDep = _mapper.Map<Department>(depVM);
+            var newDep = new Department();
+            newDep.DepName = depVM.DepName;
+
             _context.Departments.Add(newDep);
             await _context.SaveChangesAsync();
         }
@@ -45,7 +47,9 @@ namespace WebCongDoan_API.Repository
 
         public async Task UpdateDepartment(DepartmentVM depVM)
         {
-            var dep = _mapper.Map<Department>(depVM);
+            var dep = _context.Departments.SingleOrDefault(d => d.DepId == depVM.DepId);
+            dep.DepName = depVM.DepName;
+
             _context.Departments.Update(dep);
             await _context.SaveChangesAsync();
         }

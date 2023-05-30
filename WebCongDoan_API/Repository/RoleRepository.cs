@@ -19,7 +19,9 @@ namespace WebCongDoan_API.Repository
 
         public async Task AddRole(RoleVM roleVM)
         {
-            var newRole = _mapper.Map<Role>(roleVM);
+            var newRole = new Role();
+            newRole.RoleName = roleVM.RoleName;
+
             _context.Roles.Add(newRole);
             await _context.SaveChangesAsync();
         }
@@ -45,7 +47,9 @@ namespace WebCongDoan_API.Repository
 
         public async Task UpdateRole(RoleVM roleVM)
         {
-            var updateRole = _mapper.Map<Role>(roleVM);
+            var updateRole = _context.Roles.SingleOrDefault(r => r.RoleId == roleVM.RoleId);
+            updateRole.RoleName = roleVM.RoleName;
+
             _context.Roles.Update(updateRole);
             await _context.SaveChangesAsync();
         }

@@ -19,7 +19,13 @@ namespace WebCongDoan_API.Repository
 
         public async Task AddTag(TagVM tagVM)
         {
-            var tag = _mapper.Map<Tag>(tagVM);
+            var tag = new Tag();
+            tag.TagName = tagVM.TagName;
+            tag.TagDetail = tagVM.TagDetail;
+            tag.ImgName = tagVM.ImgName;
+            tag.ImgSrc = tagVM.ImgSrc;
+            tag.BlogId = tagVM.BlogId;
+
             _context.Tags.Add(tag);
             await _context.SaveChangesAsync();
         }
@@ -51,7 +57,13 @@ namespace WebCongDoan_API.Repository
 
         public async Task UpdateTag(TagVM tagVM)
         {
-            var tag = _mapper.Map<Tag>(tagVM);
+            var tag = _context.Tags.SingleOrDefault(t => t.TagId == tagVM.TagId);
+            tag.TagName = tagVM.TagName;
+            tag.TagDetail = tagVM.TagDetail;
+            tag.ImgName = tagVM.ImgName;
+            tag.ImgSrc = tagVM.ImgSrc;
+            tag.BlogId = tagVM.BlogId;
+
             _context.Tags.Update(tag);
             await _context.SaveChangesAsync();
         }

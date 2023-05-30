@@ -19,7 +19,12 @@ namespace WebCongDoan_API.Repository
 
         public async Task AddComBlogUser(CompetitionsBlogsUserVM cbuVM)
         {
-            var cbu = _mapper.Map<CompetitionsBlogsUser>(cbuVM);
+            var cbu = new CompetitionsBlogsUser();
+            cbu.ComId = cbuVM.ComId;
+            cbu.BlogId = cbuVM.BlogId;
+            cbu.UserId = cbuVM.UserId;
+            cbu.PostDate = cbuVM.PostDate;
+
             _context.CompetitionsBlogsUsers.Add(cbu);
             await _context.SaveChangesAsync();
         }
@@ -45,7 +50,12 @@ namespace WebCongDoan_API.Repository
 
         public async Task UpdateComBlogUser(CompetitionsBlogsUserVM cbuVM)
         {
-            var cbu = _mapper.Map<CompetitionsBlogsUser>(cbuVM);
+            var cbu = _context.CompetitionsBlogsUsers.SingleOrDefault(c => c.Id == cbuVM.Id);
+            cbu.ComId = cbuVM.ComId;
+            cbu.BlogId = cbuVM.BlogId;
+            cbu.UserId = cbuVM.UserId;
+            cbu.PostDate = cbuVM.PostDate;
+
             _context.CompetitionsBlogsUsers.Update(cbu);
             await _context.SaveChangesAsync();
         }

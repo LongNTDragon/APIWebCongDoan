@@ -18,7 +18,12 @@ namespace WebCongDoan_API.Repository
         }
         public async Task AddBlog(BlogVM blogVM)
         {
-            var blog = _mapper.Map<Blog>(blogVM);
+            var blog = new Blog();
+            blog.BlogName = blogVM.BlogName;
+            blog.BlogDetai = blogVM.BlogDetai;
+            blog.ImgName = blogVM.ImgName;
+            blog.ImgSrc = blogVM.ImgSrc;
+
             _context.Blogs.Add(blog);
             await _context.SaveChangesAsync();
         }
@@ -44,7 +49,12 @@ namespace WebCongDoan_API.Repository
 
         public async Task UpdateBlog(BlogVM blogVM)
         {
-            var blog = _mapper.Map<Blog>(blogVM);
+            var blog = _context.Blogs.SingleOrDefault(b => b.BlogId == blogVM.BlogId);
+            blog.BlogName = blogVM.BlogName;
+            blog.BlogDetai = blogVM.BlogDetai;
+            blog.ImgName = blogVM.ImgName;
+            blog.ImgSrc = blogVM.ImgSrc;
+
             _context.Blogs.Update(blog);
             await _context.SaveChangesAsync();
         }

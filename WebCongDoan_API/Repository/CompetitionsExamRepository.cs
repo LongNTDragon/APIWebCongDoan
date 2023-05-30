@@ -18,7 +18,10 @@ namespace WebCongDoan_API.Repository
         }
         public async Task AddCompetitionsExam(CompetitionsExamVM comEVM)
         {
-            var comE = _mapper.Map<CompetitionsExam>(comEVM);
+            var comE = new CompetitionsExam();
+            comE.ComId = comEVM.ComId;
+            comE.ExamId = comEVM.ExamId;
+
             _context.CompetitionsExams.Add(comE);
             await _context.SaveChangesAsync();
         }
@@ -56,7 +59,10 @@ namespace WebCongDoan_API.Repository
 
         public async Task UpdateCompetitionsExam(CompetitionsExamVM comEVM)
         {
-            var comE = _mapper.Map<CompetitionsExam>(comEVM);
+            var comE = _context.CompetitionsExams.SingleOrDefault(c=>c.Ceid == comEVM.Ceid);
+            comE.ExamId = comEVM.ExamId;
+            comE.ComId = comEVM.ComId;
+
             _context.CompetitionsExams.Update(comE);
             await _context.SaveChangesAsync();
         }

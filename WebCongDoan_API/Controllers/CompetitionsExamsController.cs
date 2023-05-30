@@ -70,8 +70,8 @@ namespace WebCongDoan_API.Controllers
                 if (comE == null)
                     return NotFound();
 
-                await _comERepo.UpdateCompetitionsExam(comE);
-                return Ok(comE);
+                await _comERepo.UpdateCompetitionsExam(comEVM);
+                return Ok(comEVM);
             }
             catch (Exception ex)
             {
