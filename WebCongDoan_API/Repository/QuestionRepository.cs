@@ -19,7 +19,13 @@ namespace WebCongDoan_API.Repository
 
         public async Task AddQuestion(QuestionVM quesVM)
         {
-            var ques = _mapper.Map<Question>(quesVM);
+            var ques = new Question();
+            ques.QuesDetail = quesVM.QuesDetail;
+            ques.AnsOfQues = quesVM.AnsOfQues;
+            ques.TrueAnswer = quesVM.TrueAnswer;
+            ques.ExamId = quesVM.ExamId;
+            ques.QuesTId = quesVM.QuesTId;
+
             _context.Questions.Add(ques);
             await _context.SaveChangesAsync();
         }
@@ -57,7 +63,13 @@ namespace WebCongDoan_API.Repository
 
         public async Task UpdateQuestion(QuestionVM quesVM)
         {
-            var ques = _mapper.Map<Question>(quesVM);
+            var ques = _context.Questions.SingleOrDefault(q => q.QuesId == quesVM.QuesId);
+            ques.QuesDetail = quesVM.QuesDetail;
+            ques.AnsOfQues = quesVM.AnsOfQues;
+            ques.TrueAnswer = quesVM.TrueAnswer;
+            ques.ExamId = quesVM.ExamId;
+            ques.QuesTId = quesVM.QuesTId;
+
             _context.Questions.Update(ques);
             await _context.SaveChangesAsync();
         }

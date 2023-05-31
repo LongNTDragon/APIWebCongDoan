@@ -18,7 +18,14 @@ namespace WebCongDoan_API.Repository
         }
         public async Task AddCompetition(CompetitionVM comVM)
         {
-            var com = _mapper.Map<Competition>(comVM);
+            var com = new Competition();
+            com.ComName = comVM.ComName;
+            com.ExamTimes = comVM.ExamTimes;
+            com.StartDate = comVM.StartDate;
+            com.EndDate = comVM.EndDate;
+            com.UserQuan = comVM.UserQuan;
+            com.DepId = comVM.DepId;
+
             _context.Competitions.Add(com);
             await _context.SaveChangesAsync();
         }
@@ -44,7 +51,14 @@ namespace WebCongDoan_API.Repository
 
         public async Task UpdateCompetition(CompetitionVM comVM)
         {
-            var com = _mapper.Map<Competition>(comVM);
+            var com = _context.Competitions.SingleOrDefault(c => c.ComId == comVM.ComId);
+            com.ComName = comVM.ComName;
+            com.ExamTimes = comVM.ExamTimes;
+            com.StartDate = comVM.StartDate;
+            com.EndDate = comVM.EndDate;
+            com.UserQuan = comVM.UserQuan;
+            com.DepId = comVM.DepId;
+
             _context.Competitions.Update(com);
             await _context.SaveChangesAsync();
         }

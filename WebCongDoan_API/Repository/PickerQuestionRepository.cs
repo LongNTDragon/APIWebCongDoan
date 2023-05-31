@@ -19,7 +19,11 @@ namespace WebCongDoan_API.Repository
 
         public async Task AddPickerQuestion(PickerQuestionVM pickQVM)
         {
-            var pickQ = _mapper.Map<PickerQuestion>(pickQVM);
+            var pickQ = new PickerQuestion();
+            pickQ.Cuid = pickQVM.Cuid;
+            pickQ.QuesId = pickQVM.QuesId;
+            pickQ.Answer = pickQVM.Answer;
+
             _context.PickerQuestions.Add(pickQ);
             await _context.SaveChangesAsync();
         }
@@ -51,7 +55,11 @@ namespace WebCongDoan_API.Repository
 
         public async Task UpdatePickerQuestion(PickerQuestionVM pickQVM)
         {
-            var pickQ = _mapper.Map<PickerQuestion>(pickQVM);
+            var pickQ = _context.PickerQuestions.SingleOrDefault(p => p.Pqid == pickQVM.Pqid);
+            pickQ.Cuid = pickQVM.Cuid;
+            pickQ.QuesId = pickQVM.QuesId;
+            pickQ.Answer = pickQVM.Answer;
+
             _context.PickerQuestions.Update(pickQ);
             await _context.SaveChangesAsync();
         }

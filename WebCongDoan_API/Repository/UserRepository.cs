@@ -21,7 +21,15 @@ namespace WebCongDoan_API.Repository
 
         public async Task AddUser(RegisterVM registerVM)
         {
-            var newUser = _mapper.Map<User>(registerVM);
+            var newUser = new User();
+            newUser.UserId = registerVM.UserId;
+            newUser.UserName = registerVM.UserName;
+            newUser.DateOfBirth = registerVM.DateOfBirth;
+            newUser.Email = registerVM.Email;
+            newUser.Password = registerVM.Password;
+            newUser.DepId = registerVM.DepId;
+            newUser.RoleId = registerVM.RoleId;
+
             _context.Users.Add(newUser);
             await _context.SaveChangesAsync();
         }
@@ -91,7 +99,15 @@ namespace WebCongDoan_API.Repository
 
         public async Task UpdateUser(UserVM userVM)
         {
-            var user = _mapper.Map<User>(userVM);
+            var user = _context.Users.SingleOrDefault(u => u.UserId == userVM.UserId);
+            user.UserId = userVM.UserId;
+            user.UserName = userVM.UserName;
+            user.DateOfBirth = userVM.DateOfBirth;
+            user.Email = userVM.Email;
+            user.Password = userVM.Password;
+            user.DepId = userVM.DepId;
+            user.RoleId = userVM.RoleId;
+
             _context.Users.Update(user);
             await _context.SaveChangesAsync();
         }

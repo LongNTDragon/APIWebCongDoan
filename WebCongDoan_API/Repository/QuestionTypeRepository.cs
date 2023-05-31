@@ -19,7 +19,9 @@ namespace WebCongDoan_API.Repository
 
         public async Task AddQuestionType(QuestionTypeVM quesTVM)
         {
-            var quesT = _mapper.Map<QuestionType>(quesTVM);
+            var quesT = new QuestionType();
+            quesT.QuesTName = quesTVM.QuesTName;
+
             _context.QuestionTypes.Add(quesT);
             await _context.SaveChangesAsync();
         }
@@ -45,7 +47,9 @@ namespace WebCongDoan_API.Repository
 
         public async Task UpdateQuestionType(QuestionTypeVM quesTVM)
         {
-            var quesT = _mapper.Map<QuestionType>(quesTVM);
+            var quesT = _context.QuestionTypes.SingleOrDefault(qt => qt.QuesTId == quesTVM.QuesTId);
+            quesT.QuesTName = quesTVM.QuesTName;
+
             _context.QuestionTypes.Update(quesT);
             await _context.SaveChangesAsync();
         }

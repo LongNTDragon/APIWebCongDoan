@@ -19,7 +19,9 @@ namespace WebCongDoan_API.Repository
 
         public async Task AddExam(ExamVM examVM)
         {
-            var exam = _mapper.Map<Exam>(examVM);
+            var exam = new Exam();
+            exam.ExamName = examVM.ExamName;
+
             _context.Exams.Add(exam);
             await _context.SaveChangesAsync();
         }
@@ -45,7 +47,9 @@ namespace WebCongDoan_API.Repository
 
         public async Task UpdateExam(ExamVM examVM)
         {
-            var exam = _mapper.Map<Exam>(examVM);
+            var exam = _context.Exams.SingleOrDefault(e => e.ExamId == examVM.ExamId);
+            exam.ExamName = examVM.ExamName;
+
             _context.Exams.Update(exam);
             await _context.SaveChangesAsync();
         }

@@ -19,7 +19,13 @@ namespace WebCongDoan_API.Repository
 
         public async Task AddResult(ResultVM resultVM)
         {
-            var result = _mapper.Map<Result>(resultVM);
+            var result = new Result();
+            result.TrueAns = resultVM.TrueAns;
+            result.FalseAns = resultVM.FalseAns;
+            result.Cuid = resultVM.Cuid;
+            result.StartTimes = resultVM.StartTimes;
+            result.EndTimes = resultVM.EndTimes;
+
             _context.Results.Add(result);
             await _context.SaveChangesAsync();
         }
@@ -51,7 +57,13 @@ namespace WebCongDoan_API.Repository
 
         public async Task UpdateResult(ResultVM resultVM)
         {
-            var result = _mapper.Map<Result>(resultVM);
+            var result = _context.Results.SingleOrDefault(r => r.ResId == resultVM.ResId);
+            result.TrueAns = resultVM.TrueAns;
+            result.FalseAns = resultVM.FalseAns;
+            result.Cuid = resultVM.Cuid;
+            result.StartTimes = resultVM.StartTimes;
+            result.EndTimes = resultVM.EndTimes;
+
             _context.Results.Update(result);
             await _context.SaveChangesAsync();
         }
