@@ -1,134 +1,197 @@
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\appsettings.Development.json
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\appsettings.json
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\WebCongDoan_API.exe
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\WebCongDoan_API.deps.json
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\WebCongDoan_API.runtimeconfig.json
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\WebCongDoan_API.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\WebCongDoan_API.pdb
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\Humanizer.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\Microsoft.Identity.Client.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\Microsoft.OpenApi.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\System.Drawing.Common.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\System.Runtime.Caching.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\System.Security.Permissions.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\System.Windows.Extensions.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\obj\Debug\net6.0\WebCongDoan_API.csproj.AssemblyReference.cache
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\obj\Debug\net6.0\WebCongDoan_API.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\obj\Debug\net6.0\WebCongDoan_API.AssemblyInfoInputs.cache
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\obj\Debug\net6.0\WebCongDoan_API.AssemblyInfo.cs
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\obj\Debug\net6.0\WebCongDoan_API.csproj.CoreCompileInputs.cache
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\obj\Debug\net6.0\WebCongDoan_API.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\obj\Debug\net6.0\WebCongDoan_API.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\obj\Debug\net6.0\staticwebassets\msbuild.WebCongDoan_API.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\obj\Debug\net6.0\staticwebassets\msbuild.build.WebCongDoan_API.props
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.WebCongDoan_API.props
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.WebCongDoan_API.props
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\obj\Debug\net6.0\staticwebassets.pack.json
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\obj\Debug\net6.0\staticwebassets.build.json
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\obj\Debug\net6.0\staticwebassets.development.json
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\obj\Debug\net6.0\scopedcss\bundle\WebCongDoan_API.styles.css
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\obj\Debug\net6.0\WebCongDoan_API.csproj.CopyComplete
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\obj\Debug\net6.0\WebCongDoan_API.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\obj\Debug\net6.0\refint\WebCongDoan_API.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\obj\Debug\net6.0\WebCongDoan_API.pdb
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\obj\Debug\net6.0\WebCongDoan_API.genruntimeconfig.cache
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\obj\Debug\net6.0\ref\WebCongDoan_API.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\AutoMapper.dll
-C:\Users\Admin\source\repos\WebCongDoan_API\WebCongDoan_API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\appsettings.Development.json
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\appsettings.json
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\WebCongDoan_API.exe
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\WebCongDoan_API.deps.json
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\WebCongDoan_API.runtimeconfig.json
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\WebCongDoan_API.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\WebCongDoan_API.pdb
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\AutoMapper.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\Humanizer.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\Microsoft.Identity.Client.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\Microsoft.OpenApi.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\System.Drawing.Common.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\System.Runtime.Caching.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\System.Security.Permissions.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\System.Windows.Extensions.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\obj\Debug\net6.0\WebCongDoan_API.csproj.AssemblyReference.cache
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\obj\Debug\net6.0\WebCongDoan_API.GeneratedMSBuildEditorConfig.editorconfig
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\obj\Debug\net6.0\WebCongDoan_API.AssemblyInfoInputs.cache
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\obj\Debug\net6.0\WebCongDoan_API.AssemblyInfo.cs
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\obj\Debug\net6.0\WebCongDoan_API.csproj.CoreCompileInputs.cache
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\obj\Debug\net6.0\WebCongDoan_API.MvcApplicationPartsAssemblyInfo.cs
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\obj\Debug\net6.0\WebCongDoan_API.MvcApplicationPartsAssemblyInfo.cache
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\obj\Debug\net6.0\staticwebassets\msbuild.WebCongDoan_API.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\obj\Debug\net6.0\staticwebassets\msbuild.build.WebCongDoan_API.props
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.WebCongDoan_API.props
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.WebCongDoan_API.props
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\obj\Debug\net6.0\staticwebassets.pack.json
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\obj\Debug\net6.0\staticwebassets.build.json
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\obj\Debug\net6.0\staticwebassets.development.json
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\obj\Debug\net6.0\scopedcss\bundle\WebCongDoan_API.styles.css
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\obj\Debug\net6.0\WebCongDoan_API.csproj.CopyComplete
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\obj\Debug\net6.0\WebCongDoan_API.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\obj\Debug\net6.0\refint\WebCongDoan_API.dll
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\obj\Debug\net6.0\WebCongDoan_API.pdb
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\obj\Debug\net6.0\WebCongDoan_API.genruntimeconfig.cache
-C:\Long\WebCongDoan\APIWebCongDoan\WebCongDoan_API\obj\Debug\net6.0\ref\WebCongDoan_API.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/appsettings.Development.json
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/appsettings.json
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/WebCongDoan_API.exe
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/WebCongDoan_API.deps.json
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/WebCongDoan_API.runtimeconfig.json
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/WebCongDoan_API.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/WebCongDoan_API.pdb
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/Humanizer.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/Microsoft.Data.SqlClient.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/Microsoft.Identity.Client.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/Microsoft.OpenApi.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/System.Configuration.ConfigurationManager.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/System.Drawing.Common.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/System.Runtime.Caching.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/System.Security.Cryptography.ProtectedData.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/System.Security.Permissions.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/System.Windows.Extensions.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.csproj.AssemblyReference.cache
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.AssemblyInfoInputs.cache
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.AssemblyInfo.cs
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.csproj.CoreCompileInputs.cache
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.MvcApplicationPartsAssemblyInfo.cs
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.MvcApplicationPartsAssemblyInfo.cache
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/obj/Debug/net6.0/staticwebassets/msbuild.WebCongDoan_API.Microsoft.AspNetCore.StaticWebAssets.props
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/obj/Debug/net6.0/staticwebassets/msbuild.build.WebCongDoan_API.props
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.WebCongDoan_API.props
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.WebCongDoan_API.props
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/obj/Debug/net6.0/staticwebassets.pack.json
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/obj/Debug/net6.0/staticwebassets.build.json
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/obj/Debug/net6.0/staticwebassets.development.json
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/obj/Debug/net6.0/scopedcss/bundle/WebCongDoan_API.styles.css
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.csproj.CopyComplete
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/obj/Debug/net6.0/refint/WebCongDoan_API.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.pdb
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.genruntimeconfig.cache
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/obj/Debug/net6.0/ref/WebCongDoan_API.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/AutoMapper.dll
+C:/Users/Admin/source/repos/WebCongDoan_API/WebCongDoan_API/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/appsettings.Development.json
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/appsettings.json
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/WebCongDoan_API.exe
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/WebCongDoan_API.deps.json
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/WebCongDoan_API.runtimeconfig.json
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/WebCongDoan_API.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/WebCongDoan_API.pdb
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/AutoMapper.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Humanizer.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.Data.SqlClient.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.Identity.Client.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.OpenApi.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/System.Configuration.ConfigurationManager.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/System.Drawing.Common.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/System.Runtime.Caching.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/System.Security.Cryptography.ProtectedData.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/System.Security.Permissions.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/System.Windows.Extensions.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.csproj.AssemblyReference.cache
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.GeneratedMSBuildEditorConfig.editorconfig
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.AssemblyInfoInputs.cache
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.AssemblyInfo.cs
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.csproj.CoreCompileInputs.cache
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.MvcApplicationPartsAssemblyInfo.cs
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.MvcApplicationPartsAssemblyInfo.cache
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/staticwebassets/msbuild.WebCongDoan_API.Microsoft.AspNetCore.StaticWebAssets.props
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/staticwebassets/msbuild.build.WebCongDoan_API.props
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.WebCongDoan_API.props
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.WebCongDoan_API.props
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/staticwebassets.pack.json
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/staticwebassets.build.json
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/staticwebassets.development.json
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/scopedcss/bundle/WebCongDoan_API.styles.css
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.csproj.CopyComplete
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/refint/WebCongDoan_API.dll
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.pdb
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.genruntimeconfig.cache
+C:/Long/WebCongDoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/ref/WebCongDoan_API.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/appsettings.Development.json
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/appsettings.json
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/WebCongDoan_API
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/WebCongDoan_API.deps.json
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/WebCongDoan_API.runtimeconfig.json
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/WebCongDoan_API.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/WebCongDoan_API.pdb
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/AutoMapper.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Humanizer.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.Data.SqlClient.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.Identity.Client.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.OpenApi.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/System.Configuration.ConfigurationManager.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/System.Drawing.Common.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/System.Runtime.Caching.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/System.Security.Cryptography.ProtectedData.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/System.Security.Permissions.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/System.Windows.Extensions.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.csproj.AssemblyReference.cache
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.GeneratedMSBuildEditorConfig.editorconfig
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.AssemblyInfoInputs.cache
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.AssemblyInfo.cs
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.csproj.CoreCompileInputs.cache
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.MvcApplicationPartsAssemblyInfo.cs
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.MvcApplicationPartsAssemblyInfo.cache
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/staticwebassets.build.json
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/staticwebassets.development.json
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/scopedcss/bundle/WebCongDoan_API.styles.css
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.csproj.CopyComplete
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/refint/WebCongDoan_API.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.pdb
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/WebCongDoan_API.genruntimeconfig.cache
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/obj/Debug/net6.0/ref/WebCongDoan_API.dll
+/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll

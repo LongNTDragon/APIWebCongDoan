@@ -10,10 +10,12 @@ namespace WebCongDoan_API.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUserRepository _userRepo;
+        private IConfiguration _configuration;
 
-        public UsersController(IUserRepository repo) 
+        public UsersController(IUserRepository repo, IConfiguration configuration)
         {
             _userRepo = repo;
+            _configuration = configuration;
         }
 
         [HttpGet]
@@ -124,10 +126,14 @@ namespace WebCongDoan_API.Controllers
         {
             try
             {
-                var user = await _userRepo.GetUserByEmailAndPass(loginVM);
-                return user == null ? NotFound() : Ok(loginVM);
+                var token = await _userRepo.GetUserByEmailAndPass(loginVM);
+                return Ok(new
+                {
+                    Token = token,
+                    ValidTo = TokenHelper.GetValidTo(token)
+                });
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }

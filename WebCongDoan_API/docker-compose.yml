@@ -1,0 +1,15 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  webcongdoan_api:
+    build: .
+    container_name: web_api
+    ports:
+      - "5050:80"
+  sql:
+    image: "toanhhg123/webcongdoan_image_sql:chap1"
+    container_name: webcongdoan_sql
+    ports: # not actually needed, because the two services are on the same network
+      - "1433:1433" 
+    environment:
+      - ACCEPT_EULA=y
+      - SA_PASSWORD=123!@#Aa

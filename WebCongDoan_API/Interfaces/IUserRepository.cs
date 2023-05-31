@@ -18,6 +18,6 @@ namespace WebCongDoan_API.Interfaces
 
         public Task DeleteUser(string id);
 
-        public Task<LoginVM> GetUserByEmailAndPass(LoginVM loginVM);
+        public Task<string> GetUserByEmailAndPass(LoginVM loginVM);
     }
 }

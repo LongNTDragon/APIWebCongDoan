@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
 
 namespace WebCongDoan_API.Models
 {
@@ -25,4 +26,6 @@ namespace WebCongDoan_API.Models
         public virtual ICollection<CompetitionsBlogsUser> CompetitionsBlogsUsers { get; set; }
         public virtual ICollection<CompetitionsUser> CompetitionsUsers { get; set; }
     }
+
+  
 }

@@ -10,11 +10,13 @@ namespace WebCongDoan_API.Repository
     {
         private readonly MyDBContext _context;
         private readonly IMapper _mapper;
+        private IConfiguration _configuration;
 
-        public UserRepository(MyDBContext context, IMapper mapper) 
+        public UserRepository(MyDBContext context, IMapper mapper, IConfiguration configuration)
         {
             _context = context;
             _mapper = mapper;
+            _configuration = configuration;
         }
 
         public async Task AddUser(RegisterVM registerVM)
@@ -39,7 +41,7 @@ namespace WebCongDoan_API.Repository
 
         public async Task<List<UserVM>> GetAllUsersByDepID(int id)
         {
-            var users = await _context.Users.Where(u=>u.DepId == id).ToListAsync();
+            var users = await _context.Users.Where(u => u.DepId == id).ToListAsync();
             return _mapper.Map<List<UserVM>>(users);
         }
 
@@ -49,10 +51,36 @@ namespace WebCongDoan_API.Repository
             return _mapper.Map<List<UserVM>>(users);
         }
 
-        public async Task<LoginVM> GetUserByEmailAndPass(LoginVM loginVM)
+        public async Task<string> GetUserByEmailAndPass(LoginVM loginVM)
         {
-            var user = _context.Users.SingleOrDefault(u=>u.Email == loginVM.Email && u.Password == loginVM.Password);
-            return _mapper.Map<LoginVM>(user);
+
+            /// logic   
+            var user = await _context.Users.Include(x => x.Role).FirstOrDefaultAsync(u => u.Email == loginVM.Email && u.Password == loginVM.Password);
+            if (user == null) throw new Exception("email hoac password khong chinh xac");
+
+
+
+
+
+
+            // set roles 
+            IList<string>? userRoles = new List<string>() { user.Role.RoleName };
+
+
+
+
+
+            var token = TokenHelper.GenerateToken(
+           _configuration["JWT:Secret"]
+           , _configuration["JWT:ValidIssuer"]
+           , _configuration["JWT:ValidAudience"]
+           , userRoles
+           , user.UserId
+           , user.UserName ?? ""
+           , user.UserAddress ?? "");
+
+
+            return token;
         }
 
         public async Task<UserVM> GetUserById(string id)
