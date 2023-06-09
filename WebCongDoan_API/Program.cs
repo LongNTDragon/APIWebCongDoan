@@ -16,10 +16,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddCors(option => 
-    option.AddDefaultPolicy(policy => policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
+builder.Services.AddCors(options =>
+   {
+       options.AddDefaultPolicy(builder =>
+           builder.SetIsOriginAllowed(_ => true)
+           .AllowAnyMethod()
+           .AllowAnyHeader()
+           .AllowCredentials());
+   });
 
-builder.Services.AddDbContext<MyDBContext>(option => 
+builder.Services.AddDbContext<MyDBContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("MyDB")));
 
 builder.Services.AddAutoMapper(typeof(Program));
@@ -70,7 +76,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+;
+app.UseCors();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
