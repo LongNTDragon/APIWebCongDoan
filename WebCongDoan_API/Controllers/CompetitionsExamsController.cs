@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebCongDoan_API.Interfaces;
 using WebCongDoan_API.Models;
@@ -8,6 +9,8 @@ namespace WebCongDoan_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class CompetitionsExamsController : ControllerBase
     {
         private readonly ICompetitionsExamRepository _comERepo;

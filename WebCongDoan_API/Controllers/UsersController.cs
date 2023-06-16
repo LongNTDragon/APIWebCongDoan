@@ -8,6 +8,7 @@ namespace WebCongDoan_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = UserRole.Admin)]
     public class UsersController : ControllerBase
     {
         private readonly IUserRepository _userRepo;
@@ -124,6 +125,7 @@ namespace WebCongDoan_API.Controllers
         }
 
         [HttpPost("Login")]
+        [AllowAnonymous]
         public async Task<IActionResult> CheckUser(LoginVM loginVM)
         {
             try

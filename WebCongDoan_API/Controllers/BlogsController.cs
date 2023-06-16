@@ -5,11 +5,13 @@ using AutoMapper;
 using WebCongDoan_API.Models;
 using WebCongDoan_API.ViewModels;
 using WebCongDoan_API.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebCongDoan_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = UserRole.Admin)]
     public class BlogsController : ControllerBase
     {
         private readonly IBlogRepository _blogRepo;
