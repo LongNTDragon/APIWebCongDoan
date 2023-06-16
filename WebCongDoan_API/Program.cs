@@ -48,13 +48,15 @@ builder.Services.AddScoped<IBlogRepository, BlogRepository>();
 builder.Services.AddScoped<ITagRepository, TagRepository>();
 builder.Services.AddScoped<ICompetitionsBlogsUserRepository, CompetitionsBlogsUserRepository>();
 
+var KEY_COOKIE_AUTH =
+builder.Configuration["KEY_COOKIE_AUTH"];
 builder.Services.AddAuthentication(options =>
     {
         options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
         options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
         options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
     })
-    .AddJwtBearer(options =>
+    .AddJwtBearer("Bearer", options =>
     {
         options.SaveToken = true;
         options.RequireHttpsMetadata = false;
@@ -66,7 +68,19 @@ builder.Services.AddAuthentication(options =>
             ValidIssuer = builder.Configuration["JWT:ValidIssuer"],
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Secret"]))
         };
+
+        options.Events = new JwtBearerEvents
+        {
+            OnMessageReceived = context =>
+            {
+                context.Token = context.Request.Cookies[KEY_COOKIE_AUTH];
+                return Task.CompletedTask;
+            }
+        };
+
+
     });
+
 
 var app = builder.Build();
 

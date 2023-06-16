@@ -20,6 +20,7 @@ namespace WebCongDoan_API.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = UserRole.User)]
         public async Task<IActionResult> Get()
         {
             try
@@ -128,11 +129,11 @@ namespace WebCongDoan_API.Controllers
             try
             {
                 var token = await _userRepo.GetUserByEmailAndPass(loginVM);
-                return Ok(new
-                {
-                    Token = token,
-                    ValidTo = TokenHelper.GetValidTo(token)
-                });
+                Response.Cookies.Append(
+                    _configuration["KEY_COOKIE_AUTH"], 
+                    token, new CookieOptions() { HttpOnly = true, SameSite = SameSiteMode.Strict });
+
+                return Ok("login success");
             }
             catch (Exception ex)
             {

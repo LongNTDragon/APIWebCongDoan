@@ -67,15 +67,8 @@ namespace WebCongDoan_API.Repository
             if (user == null) throw new Exception("email hoac password khong chinh xac");
 
 
-
-
-
-
             // set roles 
             IList<string>? userRoles = new List<string>() { user.Role.RoleName };
-
-
-
 
 
             var token = TokenHelper.GenerateToken(
