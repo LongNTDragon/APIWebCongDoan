@@ -21,7 +21,6 @@ namespace WebCongDoan_API.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = UserRole.User)]
         public async Task<IActionResult> Get()
         {
             try
