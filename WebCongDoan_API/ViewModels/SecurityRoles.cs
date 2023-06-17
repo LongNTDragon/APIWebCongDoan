@@ -50,6 +50,7 @@ namespace WebCongDoan_API.ViewModels
             {
                 new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString().ToLower()),
                 new(AppJwtClaimTypes.Subject, id.ToLower()),
+                new("id", id),
                 new(AppJwtClaimTypes.UserName, userName),
                 new(AppJwtClaimTypes.FullName, fullName)
             });

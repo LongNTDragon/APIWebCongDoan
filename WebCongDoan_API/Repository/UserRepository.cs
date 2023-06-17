@@ -86,7 +86,8 @@ namespace WebCongDoan_API.Repository
 
         public async Task<UserVM> GetUserById(string id)
         {
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.Users.Include(x => x.Role).FirstOrDefaultAsync(x => x.UserId == id);
+            user.Password = "";
             return _mapper.Map<UserVM>(user);
         }
 

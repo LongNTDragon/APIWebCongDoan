@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebCongDoan_API.Interfaces;
@@ -18,6 +19,23 @@ namespace WebCongDoan_API.Controllers
         {
             _userRepo = repo;
             _configuration = configuration;
+        }
+
+        [HttpGet("profile")]
+        [Authorize]
+        public async Task<IActionResult> Profile()
+        {
+            try
+            {
+
+                var id = User.Claims.FirstOrDefault(x => x.Type == "id")?.Value;
+                if(id == null) throw new Exception("authorize");
+                return Ok(await _userRepo.GetUserById(id));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpGet]
@@ -131,7 +149,7 @@ namespace WebCongDoan_API.Controllers
             {
                 var token = await _userRepo.GetUserByEmailAndPass(loginVM);
                 Response.Cookies.Append(
-                    _configuration["KEY_COOKIE_AUTH"], 
+                    _configuration["KEY_COOKIE_AUTH"],
                     token, new CookieOptions() { HttpOnly = true, SameSite = SameSiteMode.Strict });
 
                 return Ok("login success");
