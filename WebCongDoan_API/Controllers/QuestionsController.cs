@@ -13,7 +13,7 @@ namespace WebCongDoan_API.Controllers
     {
         private readonly IQuestionRepository _quesRepo;
 
-        public QuestionsController(IQuestionRepository repo) 
+        public QuestionsController(IQuestionRepository repo)
         {
             _quesRepo = repo;
         }
@@ -36,10 +36,6 @@ namespace WebCongDoan_API.Controllers
         {
             try
             {
-                var quess = await _quesRepo.GetQuestionByExamId(id);
-                if(quess == null)
-                    return NotFound();
-
                 return Ok(await _quesRepo.GetAllQuestionByExamId(id));
             }
             catch (Exception ex)

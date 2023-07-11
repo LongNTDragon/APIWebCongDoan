@@ -3001,19 +3001,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/toanle/.nuget/packages/": {}
+    "/Users/hoatran/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/WebCongDoan_API.csproj",
+      "projectUniqueName": "/Users/hoatran/Documents/study/APIWebCongDoan/WebCongDoan_API/WebCongDoan_API.csproj",
       "projectName": "WebCongDoan_API",
-      "projectPath": "/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/WebCongDoan_API.csproj",
-      "packagesPath": "/Users/toanle/.nuget/packages/",
-      "outputPath": "/Users/toanle/code Thue/webcongdoan/APIWebCongDoan/WebCongDoan_API/obj/",
+      "projectPath": "/Users/hoatran/Documents/study/APIWebCongDoan/WebCongDoan_API/WebCongDoan_API.csproj",
+      "packagesPath": "/Users/hoatran/.nuget/packages/",
+      "outputPath": "/Users/hoatran/Documents/study/APIWebCongDoan/WebCongDoan_API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/toanle/.nuget/NuGet/NuGet.Config"
+        "/Users/hoatran/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -3089,7 +3089,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.407/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
       }
     }
   }

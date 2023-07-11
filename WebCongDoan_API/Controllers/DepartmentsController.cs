@@ -13,7 +13,7 @@ namespace WebCongDoan_API.Controllers
     {
         private readonly IDepartmentRepository _depRepo;
 
-        public DepartmentsController(IDepartmentRepository repo) 
+        public DepartmentsController(IDepartmentRepository repo)
         {
             _depRepo = repo;
         }

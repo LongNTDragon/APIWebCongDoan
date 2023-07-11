@@ -1,0 +1,13 @@
+{
+  "name": "webcongdoan_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clear:server":"docker stop web_api && docker rm web_api && rm -rf bin && docker image rm webcongdoan_api-webcongdoan_api",
+    "build:server": "dotnet build && dotnet publish &&  docker compose up webcongdoan_api -d",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
