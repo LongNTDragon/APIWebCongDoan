@@ -9,5 +9,6 @@
         public DateTime EndDate { get; set; }
         public int? UserQuan { get; set; }
         public int DepId { get; set; }
+        public int? isDeleted { get; set; }
     }
 }

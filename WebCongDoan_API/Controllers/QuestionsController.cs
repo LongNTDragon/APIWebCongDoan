@@ -34,11 +34,11 @@ namespace WebCongDoan_API.Controllers
         {
             try
             {
-                var quess = await _quesRepo.GetQuestionByExamId(id);
+                var quess = await _quesRepo.GetAllQuestionByExamId(id);
                 if(quess == null)
                     return NotFound();
 
-                return Ok(await _quesRepo.GetAllQuestionByExamId(id));
+                return Ok(quess);
             }
             catch (Exception ex)
             {

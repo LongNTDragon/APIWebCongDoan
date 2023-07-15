@@ -20,6 +20,7 @@ namespace WebCongDoan_API.Models
         public DateTime EndDate { get; set; }
         public int? UserQuan { get; set; }
         public int DepId { get; set; }
+        public int? isDeleted { get; set; }
 
         public virtual Department Dep { get; set; } = null!;
         public virtual ICollection<CompetitionsBlogsUser> CompetitionsBlogsUsers { get; set; }

@@ -45,7 +45,7 @@ namespace WebCongDoan_API.Repository
 
         public async Task<List<QuestionVM>> GetAllQuestionByExamId(int id)
         {
-            var quess = await _context.Questions.Where(q => q.ExamId == id).ToListAsync();
+            var quess = await _context.Questions.Where(r => r.ExamId == id).ToListAsync();
             return _mapper.Map<List<QuestionVM>>(quess);
         }
 

@@ -38,6 +38,7 @@ builder.Services.AddScoped<IPickerQuestionRepository, PickerQuestionRepository>(
 builder.Services.AddScoped<IBlogRepository, BlogRepository>();
 builder.Services.AddScoped<ITagRepository, TagRepository>();
 builder.Services.AddScoped<ICompetitionsBlogsUserRepository, CompetitionsBlogsUserRepository>();
+builder.Services.AddScoped<ICompetitionsPrizesUsersRepository, CompetitionsPrizesUsersRepository>();
 
 
 var app = builder.Build();
