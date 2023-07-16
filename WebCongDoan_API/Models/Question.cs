@@ -16,7 +16,6 @@ namespace WebCongDoan_API.Models
         public string? TrueAnswer { get; set; }
         public int ExamId { get; set; }
         public int QuesTId { get; set; }
-
         public virtual Exam Exa { get; set; } = null!;
         public virtual QuestionType QuesT { get; set; } = null!;
         public virtual ICollection<PickerQuestion> PickerQuestions { get; set; }
