@@ -62,5 +62,14 @@ namespace WebCongDoan_API.Repository
             _context.Competitions.Update(com);
             await _context.SaveChangesAsync();
         }
+
+        public async Task UpdateIsDeletedByComID(int id, int value)
+        {
+            var com = _context.Competitions.SingleOrDefault(c => c.ComId == id);
+            com.isDeleted = value;
+
+            _context.Competitions.Update(com);
+            await _context.SaveChangesAsync();
+        }
     }
 }

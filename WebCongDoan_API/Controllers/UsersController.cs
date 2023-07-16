@@ -101,6 +101,25 @@ namespace WebCongDoan_API.Controllers
             }
         }
 
+        [HttpPut("UpdateIsDeleted")]
+        public async Task<IActionResult> UpdateIsDeleted(string id, int value)
+        {
+            try
+            {
+                var user = await _userRepo.GetUserById(id);
+                if (user == null)
+                    return NotFound();
+
+                await _userRepo.UpdateIsDeletedByUserID(id, value);
+                var newUser = await _userRepo.GetUserById(id);
+                return Ok(newUser);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpDelete]
         public async Task<IActionResult> Delete(String id)
         {

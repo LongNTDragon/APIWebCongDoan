@@ -83,5 +83,14 @@ namespace WebCongDoan_API.Repository
             _context.Users.Update(user);
             await _context.SaveChangesAsync();
         }
+
+        public async Task UpdateIsDeletedByUserID(string id, int value)
+        {
+            var user = _context.Users.SingleOrDefault(c => c.UserId == id);
+            user.isDeleted = value;
+
+            _context.Users.Update(user);
+            await _context.SaveChangesAsync();
+        }
     }
 }

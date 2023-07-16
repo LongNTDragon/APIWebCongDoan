@@ -13,5 +13,7 @@ namespace WebCongDoan_API.Interfaces
         public Task UpdateCompetition(CompetitionVM comVM);
 
         public Task DeleteCompetition(int id);
+
+        public Task UpdateIsDeletedByComID(int id,int value);
     }
 }
