@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/Users/hoatran/Documents/study/APIWebCongDoan/WebCongDoan_API/WebCongDoan_API.csproj": {}
+    "C:\\Users\\Admin\\source\\repos\\WebCongDoan_API\\WebCongDoan_API\\WebCongDoan_API.csproj": {}
   },
   "projects": {
-    "/Users/hoatran/Documents/study/APIWebCongDoan/WebCongDoan_API/WebCongDoan_API.csproj": {
+    "C:\\Users\\Admin\\source\\repos\\WebCongDoan_API\\WebCongDoan_API\\WebCongDoan_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/hoatran/Documents/study/APIWebCongDoan/WebCongDoan_API/WebCongDoan_API.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\WebCongDoan_API\\WebCongDoan_API\\WebCongDoan_API.csproj",
         "projectName": "WebCongDoan_API",
-        "projectPath": "/Users/hoatran/Documents/study/APIWebCongDoan/WebCongDoan_API/WebCongDoan_API.csproj",
-        "packagesPath": "/Users/hoatran/.nuget/packages/",
-        "outputPath": "/Users/hoatran/Documents/study/APIWebCongDoan/WebCongDoan_API/obj/",
+        "projectPath": "C:\\Users\\Admin\\source\\repos\\WebCongDoan_API\\WebCongDoan_API\\WebCongDoan_API.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\source\\repos\\WebCongDoan_API\\WebCongDoan_API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/hoatran/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -90,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

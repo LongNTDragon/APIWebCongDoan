@@ -10,5 +10,6 @@
         public string? UserAddress { get; set; }
         public int RoleId { get; set; }
         public int DepId { get; set; }
+        public int? isDeleted { get; set; }
     }
 }

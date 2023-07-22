@@ -47,6 +47,7 @@ builder.Services.AddScoped<IPickerQuestionRepository, PickerQuestionRepository>(
 builder.Services.AddScoped<IBlogRepository, BlogRepository>();
 builder.Services.AddScoped<ITagRepository, TagRepository>();
 builder.Services.AddScoped<ICompetitionsBlogsUserRepository, CompetitionsBlogsUserRepository>();
+builder.Services.AddScoped<ICompetitionsPrizesUsersRepository, CompetitionsPrizesUsersRepository>();
 
 var KEY_COOKIE_AUTH =
 builder.Configuration["KEY_COOKIE_AUTH"];

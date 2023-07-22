@@ -25,6 +25,7 @@ namespace WebCongDoan_API.Repository
             com.EndDate = comVM.EndDate;
             com.UserQuan = comVM.UserQuan;
             com.DepId = comVM.DepId;
+            com.isDeleted = 0;
 
             _context.Competitions.Add(com);
             await _context.SaveChangesAsync();
@@ -58,6 +59,15 @@ namespace WebCongDoan_API.Repository
             com.EndDate = comVM.EndDate;
             com.UserQuan = comVM.UserQuan;
             com.DepId = comVM.DepId;
+
+            _context.Competitions.Update(com);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateIsDeletedByComID(int id, int value)
+        {
+            var com = _context.Competitions.SingleOrDefault(c => c.ComId == id);
+            com.isDeleted = value;
 
             _context.Competitions.Update(com);
             await _context.SaveChangesAsync();

@@ -29,6 +29,7 @@ namespace WebCongDoan_API.Repository
             newUser.Password = registerVM.Password;
             newUser.DepId = registerVM.DepId;
             newUser.RoleId = registerVM.RoleId;
+            newUser.isDeleted = 0;
 
             _context.Users.Add(newUser);
             await _context.SaveChangesAsync();
@@ -101,6 +102,15 @@ namespace WebCongDoan_API.Repository
             user.Password = userVM.Password;
             user.DepId = userVM.DepId;
             user.RoleId = userVM.RoleId;
+
+            _context.Users.Update(user);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateIsDeletedByUserID(string id, int value)
+        {
+            var user = _context.Users.SingleOrDefault(c => c.UserId == id);
+            user.isDeleted = value;
 
             _context.Users.Update(user);
             await _context.SaveChangesAsync();

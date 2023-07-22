@@ -77,6 +77,25 @@ namespace WebCongDoan_API.Controllers
             }
         }
 
+        [HttpPut("UpdateIsDeleted")]
+        public async Task<IActionResult> UpdateIsDeleted(int id, int value)
+        {
+            try
+            {
+                var com = await _comRepo.GetCompetitionById(id);
+                if (com == null)
+                    return NotFound();
+
+                await _comRepo.UpdateIsDeletedByComID(id, value);
+                var newCom = await _comRepo.GetCompetitionById(id);
+                return Ok(newCom);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {

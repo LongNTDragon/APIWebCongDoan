@@ -33,6 +33,7 @@ namespace WebCongDoan_API.Models
         public virtual DbSet<CompetitionsPrize> CompetitionsPrizes { get; set; } = null!;
         public virtual DbSet<Exam> Exams { get; set; } = null!;
         public virtual DbSet<CompetitionsExam> CompetitionsExams { get; set; } = null!;
+        public virtual DbSet<CompetitionsPrizesUsers> CompetitionsPrizesUsers { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -75,6 +76,8 @@ namespace WebCongDoan_API.Models
                 entity.Property(e => e.StartDate).HasColumnType("datetime");
 
                 entity.Property(e => e.UserQuan).HasDefaultValueSql("((0))");
+
+                entity.Property(e => e.isDeleted).HasDefaultValueSql("((0))");
 
                 entity.HasOne(d => d.Dep)
                     .WithMany(p => p.Competitions)
@@ -304,6 +307,8 @@ namespace WebCongDoan_API.Models
 
                 entity.Property(e => e.Email).HasMaxLength(255);
 
+                entity.Property(e => e.isDeleted).HasDefaultValueSql("((0))");
+
                 entity.Property(e => e.Password)
                     .HasMaxLength(9)
                     .IsUnicode(false);
@@ -357,6 +362,35 @@ namespace WebCongDoan_API.Models
                     .HasForeignKey(d => d.PriTid)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Competitions_Prizes_PrizeTypes");
+            });
+
+            modelBuilder.Entity<CompetitionsPrizesUsers>(entity =>
+            {
+                entity.HasKey(e => e.Id)
+                    .HasName("PK__CompetitionsPrizesUsers");
+
+                entity.ToTable("Competitions_Prizes_Users");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Cpid).HasColumnName("CPID");
+
+                entity.Property(e => e.UserId)
+                    .HasMaxLength(12)
+                    .IsUnicode(false)
+                    .HasColumnName("UserID");
+
+                entity.HasOne(d => d.ComPr)
+                    .WithMany(p => p.CompetitionsPrizesUsers)
+                    .HasForeignKey(d => d.Cpid)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Competitions_Prizes_Users_ComPr");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.CompetitionsPrizesUsers)
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Competitions_Prizes_Users_Users");
             });
 
             modelBuilder.Entity<CompetitionsExam>(entity =>
