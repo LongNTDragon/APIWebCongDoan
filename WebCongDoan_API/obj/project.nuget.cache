@@ -1,12 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "amkodfWPuy0nEZabZB3cgUjlGZ34PMWBc+PxBMBkdflEGvrSqK3hcQdOEy/CokJFqvk7B17N66tP89txSrKAKA==",
-=======
-  "dgSpecHash": "00bDGWAgjyAENCodkAm19c+S3cy6oirjiAelj3eUnqmsmNiQSw8SOxqE1GJeSGe7TpQuwDihbWGQt3x90Q1pmQ==",
->>>>>>> 9ed8161f811a0615704c01bbdf957ca51dd57387
   "success": true,
-  "projectFilePath": "C:\\Long\\WebCongDoan\\APIWebCongDoan\\WebCongDoan_API\\WebCongDoan_API.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\source\\repos\\WebCongDoan_API\\WebCongDoan_API\\WebCongDoan_API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\automapper\\8.0.0\\automapper.8.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\6.0.0\\automapper.extensions.microsoft.dependencyinjection.6.0.0.nupkg.sha512",
@@ -77,5 +73,12 @@
     "C:\\Users\\Admin\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Admin\\source\\repos\\WebCongDoan_API\\WebCongDoan_API\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
