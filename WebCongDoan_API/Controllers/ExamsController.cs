@@ -8,7 +8,7 @@ namespace WebCongDoan_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize(Roles = UserRole.Admin +","+ UserRole.Manager)]
     public class ExamsController : ControllerBase
     {
         private readonly IExamRepository _examRepo;

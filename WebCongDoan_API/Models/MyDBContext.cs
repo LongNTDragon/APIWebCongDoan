@@ -193,9 +193,7 @@ namespace WebCongDoan_API.Models
             {
                 entity.Property(e => e.ExamId).HasColumnName("ExamID");
 
-                entity.Property(e => e.ExamName)
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
+                entity.Property(e => e.ExamName).HasMaxLength(255);
             });
 
             modelBuilder.Entity<QuestionType>(entity =>
