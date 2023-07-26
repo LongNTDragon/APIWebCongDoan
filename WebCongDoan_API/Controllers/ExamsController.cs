@@ -21,78 +21,43 @@ namespace WebCongDoan_API.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            try
-            {
-                return Ok(await _examRepo.GetAllExams());
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return Ok(await _examRepo.GetAllExams());
         }
 
         [HttpGet("GetById")]
         public async Task<IActionResult> GetById(int id)
         {
-            try
-            {
-                var exam = await _examRepo.GetExamById(id);
-                return exam == null ? NotFound() : Ok(exam);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var exam = await _examRepo.GetExamById(id);
+            return exam == null ? NotFound() : Ok(exam);
         }
 
         [HttpPost]
         public async Task<IActionResult> Insert(ExamVM examVM)
         {
-            try
-            {
-                await _examRepo.AddExam(examVM);
-                return StatusCode(StatusCodes.Status201Created, examVM);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _examRepo.AddExam(examVM);
+            return StatusCode(StatusCodes.Status201Created, examVM);
         }
 
         [HttpPut]
         public async Task<IActionResult> Update(ExamVM examVM)
         {
-            try
-            {
-                var exam = await _examRepo.GetExamById(examVM.ExamId);
-                if (exam == null)
-                    return NotFound();
+            var exam = await _examRepo.GetExamById(examVM.ExamId);
+            if (exam == null)
+                return NotFound();
 
-                await _examRepo.UpdateExam(examVM);
-                return Ok(examVM);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _examRepo.UpdateExam(examVM);
+            return Ok(examVM);
         }
 
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
-            try
-            {
-                var exam = await _examRepo.GetExamById(id);
-                if (exam == null)
-                    return NotFound();
+            var exam = await _examRepo.GetExamById(id);
+            if (exam == null)
+                return NotFound();
 
-                await _examRepo.DeleteExam(id);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _examRepo.DeleteExam(id);
+            return Ok();
         }
     }
 }

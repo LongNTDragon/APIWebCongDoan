@@ -65,7 +65,8 @@ namespace WebCongDoan_API.Repository
 
             /// logic   
             var user = await _context.Users.Include(x => x.Role).FirstOrDefaultAsync(u => u.Email == loginVM.Email && u.Password == loginVM.Password);
-            if (user == null) throw new Exception("email hoac password khong chinh xac");
+            if (user == null) 
+                throw new Exception("Email hoac password khong chinh xac");
 
 
             // set roles 

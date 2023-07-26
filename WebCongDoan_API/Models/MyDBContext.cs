@@ -51,11 +51,11 @@ namespace WebCongDoan_API.Models
             {
                 entity.Property(e => e.BlogId).HasColumnName("BlogID");
 
-                entity.Property(e => e.BlogDetai).HasColumnType("text");
+                entity.Property(e => e.BlogDetai).HasColumnType("ntext");
 
                 entity.Property(e => e.BlogName).HasMaxLength(255);
 
-                entity.Property(e => e.ImgName).HasColumnType("text");
+                entity.Property(e => e.ImgName).HasColumnType("ntext");
 
                 entity.Property(e => e.ImgSrc).HasColumnType("text");
             });
@@ -174,7 +174,7 @@ namespace WebCongDoan_API.Models
 
                 entity.Property(e => e.QuesId).HasColumnName("QuesID");
 
-                entity.Property(e => e.Answer).HasColumnType("text");
+                entity.Property(e => e.Answer).HasColumnType("ntext");
 
                 entity.HasOne(d => d.Cu)
                     .WithMany(p => p.PickerQuestions)
@@ -215,15 +215,15 @@ namespace WebCongDoan_API.Models
 
                 entity.Property(e => e.QuesId).HasColumnName("QuesID");
 
-                entity.Property(e => e.AnsOfQues).HasColumnType("text");
+                entity.Property(e => e.AnsOfQues).HasColumnType("ntext");
 
                 entity.Property(e => e.ExamId).HasColumnName("ExamID");
 
                 entity.Property(e => e.QuesTId).HasColumnName("QuesTID");
 
-                entity.Property(e => e.QuesDetail).HasColumnType("text");
+                entity.Property(e => e.QuesDetail).HasColumnType("ntext");
 
-                entity.Property(e => e.TrueAnswer).HasColumnType("text");
+                entity.Property(e => e.TrueAnswer).HasColumnType("ntext");
 
                 entity.HasOne(d => d.Exa)
                     .WithMany(p => p.Questions)
@@ -273,11 +273,11 @@ namespace WebCongDoan_API.Models
 
                 entity.Property(e => e.BlogId).HasColumnName("BlogID");
 
-                entity.Property(e => e.ImgName).HasColumnType("text");
+                entity.Property(e => e.ImgName).HasColumnType("ntext");
 
                 entity.Property(e => e.ImgSrc).HasColumnType("text");
 
-                entity.Property(e => e.TagDetail).HasColumnType("text");
+                entity.Property(e => e.TagDetail).HasColumnType("ntext");
 
                 entity.Property(e => e.TagName).HasMaxLength(255);
 

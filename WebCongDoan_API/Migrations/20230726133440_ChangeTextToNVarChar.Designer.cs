@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebCongDoan_API.Models;
 
@@ -11,9 +12,10 @@ using WebCongDoan_API.Models;
 namespace WebCongDoan_API.Migrations
 {
     [DbContext(typeof(MyDBContext))]
-    partial class MyDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230726133440_ChangeTextToNVarChar")]
+    partial class ChangeTextToNVarChar
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,7 +34,8 @@ namespace WebCongDoan_API.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BlogId"), 1L, 1);
 
                     b.Property<string>("BlogDetai")
-                        .HasColumnType("ntext");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("BlogName")
                         .HasMaxLength(255)
@@ -40,7 +43,8 @@ namespace WebCongDoan_API.Migrations
 
                     b.Property<string>("ImgName")
                         .IsRequired()
-                        .HasColumnType("ntext");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("ImgSrc")
                         .IsRequired()
@@ -311,7 +315,8 @@ namespace WebCongDoan_API.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Pqid"), 1L, 1);
 
                     b.Property<string>("Answer")
-                        .HasColumnType("ntext");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<int>("Cuid")
                         .HasColumnType("int")
@@ -380,21 +385,24 @@ namespace WebCongDoan_API.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("QuesId"), 1L, 1);
 
                     b.Property<string>("AnsOfQues")
-                        .HasColumnType("ntext");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<int>("ExamId")
                         .HasColumnType("int")
                         .HasColumnName("ExamID");
 
                     b.Property<string>("QuesDetail")
-                        .HasColumnType("ntext");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<int>("QuesTId")
                         .HasColumnType("int")
                         .HasColumnName("QuesTID");
 
                     b.Property<string>("TrueAnswer")
-                        .HasColumnType("ntext");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.HasKey("QuesId")
                         .HasName("PK__Question__5F3F5F149F60A4ED");
@@ -494,14 +502,16 @@ namespace WebCongDoan_API.Migrations
 
                     b.Property<string>("ImgName")
                         .IsRequired()
-                        .HasColumnType("ntext");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("ImgSrc")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("TagDetail")
-                        .HasColumnType("ntext");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("TagName")
                         .HasMaxLength(255)

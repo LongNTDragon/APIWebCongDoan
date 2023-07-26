@@ -21,79 +21,43 @@ namespace WebCongDoan_API.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            try
-            {
-                return Ok(await _roleRepo.GetAllRoles());
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return Ok(await _roleRepo.GetAllRoles());
         }
 
         [HttpGet("GetById")]
         public async Task<IActionResult> GetById(int id)
         {
-            try
-            {
-                var role = await _roleRepo.GetRoleById(id);
-                return role == null ? NotFound() : Ok(role);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var role = await _roleRepo.GetRoleById(id);
+            return role == null ? NotFound() : Ok(role);
         }
 
         [HttpPost]
         public async Task<IActionResult> Insert(RoleVM roleVM)
         {
-            try
-            {
-                
-                await _roleRepo.AddRole(roleVM);
-                return StatusCode(StatusCodes.Status201Created, roleVM);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _roleRepo.AddRole(roleVM);
+            return StatusCode(StatusCodes.Status201Created, roleVM);
         }
 
         [HttpPut]
         public async Task<IActionResult> Update(RoleVM roleVM)
         {
-            try
-            {
-                var role = await _roleRepo.GetRoleById(roleVM.RoleId);
-                if (role == null)
-                    return NotFound();
-
-                await _roleRepo.UpdateRole(roleVM);
-                return Ok(roleVM);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var role = await _roleRepo.GetRoleById(roleVM.RoleId);
+            if (role == null)
+                return NotFound();
+            
+            await _roleRepo.UpdateRole(roleVM);
+            return Ok(roleVM);
         }
 
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
-            try
-            {
-                var role = await _roleRepo.GetRoleById(id);
-                if (role == null)
-                    return NotFound();
-
-                await _roleRepo.DeleteRole(id);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var role = await _roleRepo.GetRoleById(id);
+            if (role == null)
+                return NotFound();
+            
+            await _roleRepo.DeleteRole(id);
+            return Ok();
         }
     }
 }

@@ -21,78 +21,43 @@ namespace WebCongDoan_API.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            try
-            {
-                return Ok(await _depRepo.GetAllDepartments());
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return Ok(await _depRepo.GetAllDepartments());
         }
 
         [HttpGet("GetById")]
         public async Task<IActionResult> GetById(int id)
         {
-            try
-            {
-                var dep = await _depRepo.GetDepartmentById(id);
-                return dep == null ? NotFound() : Ok(dep);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var dep = await _depRepo.GetDepartmentById(id);
+            return dep == null ? NotFound() : Ok(dep);
         }
 
         [HttpPost]
         public async Task<IActionResult> Insert(DepartmentVM depVM)
         {
-            try
-            {
-                await _depRepo.AddDepartment(depVM);
-                return StatusCode(StatusCodes.Status201Created, depVM);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _depRepo.AddDepartment(depVM);
+            return StatusCode(StatusCodes.Status201Created, depVM);
         }
 
         [HttpPut]
         public async Task<IActionResult> Update(DepartmentVM depVM)
         {
-            try
-            {
-                var dep = await _depRepo.GetDepartmentById(depVM.DepId);
-                if (dep == null)
-                    return NotFound();
+            var dep = await _depRepo.GetDepartmentById(depVM.DepId);
+            if (dep == null)
+                return NotFound();
 
-                await _depRepo.UpdateDepartment(depVM);
-                return Ok(depVM);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _depRepo.UpdateDepartment(depVM);
+            return Ok(depVM);
         }
 
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
-            try
-            {
-                var dep = await _depRepo.GetDepartmentById(id);
-                if (dep == null)
-                    return NotFound();
+            var dep = await _depRepo.GetDepartmentById(id);
+            if (dep == null)
+                return NotFound();
 
-                await _depRepo.DeleteDepartment(id);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _depRepo.DeleteDepartment(id);
+            return Ok();
         }
     }
 }

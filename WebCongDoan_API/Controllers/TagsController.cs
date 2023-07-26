@@ -21,91 +21,49 @@ namespace WebCongDoan_API.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            try
-            {
-                return Ok(await _tagRepo.GetAllTags());
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return Ok(await _tagRepo.GetAllTags());
         }
 
         [HttpGet("GetAllByBlogID")]
         public async Task<IActionResult> GetAllByBlogID(int id)
         {
-            try
-            {
-                return Ok(await _tagRepo.GetAllTagsByBlogID(id));
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return Ok(await _tagRepo.GetAllTagsByBlogID(id));
         }
 
         [HttpGet("GetById")]
         public async Task<IActionResult> GetTagById(int id)
         {
-            try
-            {
-                var com = await _tagRepo.GetTagById(id);
-                return com == null ? NotFound() : Ok(com);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var com = await _tagRepo.GetTagById(id);
+            return com == null ? NotFound() : Ok(com);
         }
 
         [HttpPost]
         public async Task<IActionResult> Insert(TagVM tagVM)
         {
-            try
-            {
-                await _tagRepo.AddTag(tagVM);
-                return StatusCode(StatusCodes.Status201Created, tagVM);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _tagRepo.AddTag(tagVM);
+            return StatusCode(StatusCodes.Status201Created, tagVM);
         }
 
         [HttpPut]
         public async Task<IActionResult> Update(TagVM tagVM)
         {
-            try
-            {
-                var com = await _tagRepo.GetTagById(tagVM.TagId);
-                if (com == null)
-                    return NotFound();
+            var com = await _tagRepo.GetTagById(tagVM.TagId);
+            if (com == null)
+                return NotFound();
 
-                await _tagRepo.UpdateTag(tagVM);
-                return Ok(tagVM);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _tagRepo.UpdateTag(tagVM);
+            return Ok(tagVM);
         }
 
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
-            try
-            {
-                var tag = await _tagRepo.GetTagById(id);
-                if (tag == null)
-                    return NotFound();
+            var tag = await _tagRepo.GetTagById(id);
+            if (tag == null)
+                return NotFound();
 
-                await _tagRepo.DeleteTag(id);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _tagRepo.DeleteTag(id);
+            return Ok();
         }
     }
 }

@@ -10,6 +10,7 @@ namespace WebCongDoan_API.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Authorize(Roles = UserRole.Admin)]
+
     public class UsersController : ControllerBase
     {
         private readonly IUserRepository _userRepo;
@@ -25,158 +26,96 @@ namespace WebCongDoan_API.Controllers
         [Authorize]
         public async Task<IActionResult> Profile()
         {
-            try
-            {
-
-                var id = User.Claims.FirstOrDefault(x => x.Type == "id")?.Value;
-                if(id == null) throw new Exception("authorize");
-                return Ok(await _userRepo.GetUserById(id));
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var id = User.Claims.FirstOrDefault(x => x.Type == "id")?.Value;
+            if (id == null) 
+                throw new Exception("authorize");
+            return Ok(await _userRepo.GetUserById(id));
         }
 
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            try
-            {
-                return Ok(await _userRepo.GetAllUsers());
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return Ok(await _userRepo.GetAllUsers());
         }
 
         [HttpGet("GetAllByDepID")]
         public async Task<IActionResult> GetAllByDepID(int id)
         {
-            try
-            {
-                return Ok(await _userRepo.GetAllUsersByDepID(id));
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return Ok(await _userRepo.GetAllUsersByDepID(id));
         }
 
         [HttpGet("GetAllByRoleID")]
         public async Task<IActionResult> GetAllByRoleID(int id)
         {
-            try
-            {
-                return Ok(await _userRepo.GetAllUsersByRoleID(id));
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return Ok(await _userRepo.GetAllUsersByRoleID(id));
         }
 
         [HttpGet("GetById")]
         public async Task<IActionResult> GetById(String id)
         {
-            try
-            {
-                var user = await _userRepo.GetUserById(id);
-                return user == null ? NotFound() : Ok(user);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var user = await _userRepo.GetUserById(id);
+            return user == null ? NotFound() : Ok(user);
         }
 
         [HttpPost]
         public async Task<IActionResult> Insert(RegisterVM registerVM)
         {
-            try
-            {
-                await _userRepo.AddUser(registerVM);
-                return StatusCode(StatusCodes.Status201Created, registerVM);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _userRepo.AddUser(registerVM);
+            return StatusCode(StatusCodes.Status201Created, registerVM);
         }
 
         [HttpPut]
         public async Task<IActionResult> Update(UserVM userVM)
         {
-            try
-            {
-                var user = await _userRepo.GetUserById(userVM.UserId);
-                if (user == null)
-                    return NotFound();
+            var user = await _userRepo.GetUserById(userVM.UserId);
+            if (user == null)
+                return NotFound();
 
-                await _userRepo.UpdateUser(userVM);
-                return Ok(userVM);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _userRepo.UpdateUser(userVM);
+            return Ok(userVM);
         }
 
         [HttpPut("UpdateIsDeleted")]
         public async Task<IActionResult> UpdateIsDeleted(string id, int value)
         {
-            try
-            {
-                var user = await _userRepo.GetUserById(id);
-                if (user == null)
-                    return NotFound();
+            var user = await _userRepo.GetUserById(id);
+            if (user == null)
+                return NotFound();
 
-                await _userRepo.UpdateIsDeletedByUserID(id, value);
-                var newUser = await _userRepo.GetUserById(id);
-                return Ok(newUser);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _userRepo.UpdateIsDeletedByUserID(id, value);
+            var newUser = await _userRepo.GetUserById(id);
+            return Ok(newUser);
         }
 
         [HttpDelete]
         public async Task<IActionResult> Delete(String id)
         {
-            try
-            {
-                var user = await _userRepo.GetUserById(id);
-                if (user == null)
-                    return NotFound();
+            var user = await _userRepo.GetUserById(id);
+            if (user == null)
+                return NotFound();
 
-                await _userRepo.DeleteUser(id);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _userRepo.DeleteUser(id);
+            return Ok();
         }
 
         [HttpPost("Login")]
         [AllowAnonymous]
         public async Task<IActionResult> CheckUser(LoginVM loginVM)
         {
-            try
-            {
-                var token = await _userRepo.GetUserByEmailAndPass(loginVM);
-                Response.Cookies.Append(
-                    _configuration["KEY_COOKIE_AUTH"],
-                    token, new CookieOptions() { HttpOnly = true, SameSite = SameSiteMode.Strict });
+            var token = await _userRepo.GetUserByEmailAndPass(loginVM);
+            Response.Cookies.Append(
+                _configuration["KEY_COOKIE_AUTH"],
+                token, new CookieOptions() { HttpOnly = true, SameSite = SameSiteMode.Strict });
 
-                return Ok("login success");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return Ok("Login success");
+        }
+
+        [HttpGet("Logout")]
+        [AllowAnonymous]
+        public async Task<IActionResult> Logout()
+        {
+            Response.Cookies.Delete(_configuration["KEY_COOKIE_AUTH"]);
+            return Ok("Logout success");
         }
     }
 }

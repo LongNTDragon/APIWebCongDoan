@@ -21,81 +21,46 @@ namespace WebCongDoan_API.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            try
-            {
-                return Ok(await _comPURepo.GetAllCompetitionsPrizesUsers());
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return Ok(await _comPURepo.GetAllCompetitionsPrizesUsers());
         }
 
         [HttpGet("GetAllByCPID")]
         public async Task<IActionResult> Get(int id)
         {
-            try
-            {
-                var comPU = await _comPURepo.GetCompetitionsPrizesUsersByID(id);
-                if (comPU == null)
-                    return NotFound();
+            var comPU = await _comPURepo.GetCompetitionsPrizesUsersByID(id);
+            if (comPU == null)
+                return NotFound();
 
-                return Ok(await _comPURepo.GetAllCompetitionsPrizesUsersByCPID(id));
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return Ok(await _comPURepo.GetAllCompetitionsPrizesUsersByCPID(id));
         }
 
         [HttpPost]
         public async Task<IActionResult> Insert(CompetitionsPrizesUsersVM comPUVM)
         {
-            try
-            {
-                await _comPURepo.AddCompetitionsPrizesUsers(comPUVM);
-                return StatusCode(StatusCodes.Status201Created, comPUVM);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _comPURepo.AddCompetitionsPrizesUsers(comPUVM);
+            return StatusCode(StatusCodes.Status201Created, comPUVM);
         }
 
         [HttpPut]
         public async Task<IActionResult> Update(CompetitionsPrizesUsersVM comPUVM)
         {
-            try
-            {
-                var comPU = await _comPURepo.GetCompetitionsPrizesUsersByID(comPUVM.Id);
-                if (comPU == null)
-                    return NotFound();
+            var comPU = await _comPURepo.GetCompetitionsPrizesUsersByID(comPUVM.Id);
+            if (comPU == null)
+                return NotFound();
 
-                await _comPURepo.UpdateCompetitionsPrizesUsers(comPUVM);
-                return Ok(comPUVM);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _comPURepo.UpdateCompetitionsPrizesUsers(comPUVM);
+            return Ok(comPUVM);
         }
 
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
-            try
-            {
-                var comPU = await _comPURepo.GetCompetitionsPrizesUsersByID(id);
-                if (comPU == null)
-                    return NotFound();
+            var comPU = await _comPURepo.GetCompetitionsPrizesUsersByID(id);
+            if (comPU == null)
+                return NotFound();
 
-                await _comPURepo.DeleteCompetitionsPrizesUsers(id);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _comPURepo.DeleteCompetitionsPrizesUsers(id);
+            return Ok();
         }
     }
 }

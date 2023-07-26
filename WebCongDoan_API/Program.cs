@@ -1,5 +1,6 @@
 using System.Text;
 using AutoMapper;
+using ExceptionHandling.Middlewares;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -93,8 +94,10 @@ if (app.Environment.IsDevelopment())
 }
 ;
 app.UseCors();
+
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.Run();

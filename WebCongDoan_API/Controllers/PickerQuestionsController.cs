@@ -21,91 +21,49 @@ namespace WebCongDoan_API.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            try
-            {
-                return Ok(await _pickRepo.GetAllPickerQuestions());
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return Ok(await _pickRepo.GetAllPickerQuestions());
         }
 
         [HttpGet("GetAllByComUserId")]
         public async Task<IActionResult> GetAllByCUId(int id)
         {
-            try
-            {
-                return Ok(await _pickRepo.GetAllPickerQuestionsByCUId(id));
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return Ok(await _pickRepo.GetAllPickerQuestionsByCUId(id));
         }
 
         [HttpGet("GetById")]
         public async Task<IActionResult> GetById(int id)
         {
-            try
-            {
-                var pickQ = await _pickRepo.GetPickerQuestionById(id);
-                return pickQ == null ? NotFound() : Ok(pickQ);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var pickQ = await _pickRepo.GetPickerQuestionById(id);
+            return pickQ == null ? NotFound() : Ok(pickQ);
         }
 
         [HttpPost]
         public async Task<IActionResult> Insert(PickerQuestionVM pickQVM)
         {
-            try
-            {
-                await _pickRepo.AddPickerQuestion(pickQVM);
-                return StatusCode(StatusCodes.Status201Created, pickQVM);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _pickRepo.AddPickerQuestion(pickQVM);
+            return StatusCode(StatusCodes.Status201Created, pickQVM);
         }
 
         [HttpPut]
         public async Task<IActionResult> Update(PickerQuestionVM pickQVM)
         {
-            try
-            {
-                var pickQ = await _pickRepo.GetPickerQuestionById(pickQVM.Pqid);
-                if (pickQ == null)
-                    return NotFound();
+            var pickQ = await _pickRepo.GetPickerQuestionById(pickQVM.Pqid);
+            if (pickQ == null)
+                return NotFound();
 
-                await _pickRepo.UpdatePickerQuestion(pickQVM);
-                return Ok(pickQVM);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _pickRepo.UpdatePickerQuestion(pickQVM);
+            return Ok(pickQVM);
         }
 
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
-            try
-            {
-                var pickQ = await _pickRepo.GetPickerQuestionById(id);
-                if (pickQ == null)
-                    return NotFound();
+            var pickQ = await _pickRepo.GetPickerQuestionById(id);
+            if (pickQ == null)
+                return NotFound();
 
-                await _pickRepo.DeletePickerQuestion(id);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _pickRepo.DeletePickerQuestion(id);
+            return Ok();
         }
     }
 }

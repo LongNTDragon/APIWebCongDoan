@@ -20,78 +20,43 @@ namespace WebCongDoan_API.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            try
-            {
-                return Ok(await _priRepo.GetAllPrizes());
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return Ok(await _priRepo.GetAllPrizes());
         }
 
         [HttpGet("GetById")]
         public async Task<IActionResult> GetById(int id)
         {
-            try
-            {
-                var prize = await _priRepo.GetPrizeById(id);
-                return prize == null ? NotFound() : Ok(prize);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var prize = await _priRepo.GetPrizeById(id);
+            return prize == null ? NotFound() : Ok(prize);
         }
 
         [HttpPost]
         public async Task<IActionResult> Insert(PrizeVM priVM)
         {
-            try
-            {
-                await _priRepo.AddPrize(priVM);
-                return StatusCode(StatusCodes.Status201Created, priVM);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _priRepo.AddPrize(priVM);
+            return StatusCode(StatusCodes.Status201Created, priVM);
         }
 
         [HttpPut]
         public async Task<IActionResult> Update(PrizeVM priVM)
         {
-            try
-            {
-                var prize = await _priRepo.GetPrizeById(priVM.PriId);
-                if (prize == null)
-                    return NotFound();
+            var prize = await _priRepo.GetPrizeById(priVM.PriId);
+            if (prize == null)
+                return NotFound();
 
-                await _priRepo.UpdatePrize(priVM);
-                return Ok(priVM);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _priRepo.UpdatePrize(priVM);
+            return Ok(priVM);
         }
 
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
-            try
-            {
-                var prize = await _priRepo.GetPrizeById(id);
-                if (prize == null)
-                    return NotFound();
+            var prize = await _priRepo.GetPrizeById(id);
+            if (prize == null)
+                return NotFound();
 
-                await _priRepo.DeletePrize(id);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _priRepo.DeletePrize(id);
+            return Ok();
         }
     }
 }

@@ -21,78 +21,43 @@ namespace WebCongDoan_API.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            try
-            {
-                return Ok(await _cbuRepo.GetAllComBlogUsers());
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return Ok(await _cbuRepo.GetAllComBlogUsers());
         }
 
         [HttpGet("GetById")]
         public async Task<IActionResult> GetById(int id)
         {
-            try
-            {
-                var cbu = await _cbuRepo.GetComBlogUserById(id);
-                return cbu == null ? NotFound() : Ok(cbu);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var cbu = await _cbuRepo.GetComBlogUserById(id);
+            return cbu == null ? NotFound() : Ok(cbu);
         }
 
         [HttpPost]
         public async Task<IActionResult> Insert(CompetitionsBlogsUserVM cbuVM)
         {
-            try
-            {
-                await _cbuRepo.AddComBlogUser(cbuVM);
-                return StatusCode(StatusCodes.Status201Created, cbuVM);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _cbuRepo.AddComBlogUser(cbuVM);
+            return StatusCode(StatusCodes.Status201Created, cbuVM);
         }
 
         [HttpPut]
         public async Task<IActionResult> Update(CompetitionsBlogsUserVM cbuVM)
         {
-            try
-            {
-                var cbu = await _cbuRepo.GetComBlogUserById(cbuVM.Id);
-                if (cbu == null)
-                    return NotFound();
+            var cbu = await _cbuRepo.GetComBlogUserById(cbuVM.Id);
+            if (cbu == null)
+                return NotFound();
 
-                await _cbuRepo.UpdateComBlogUser(cbuVM);
-                return Ok(cbuVM);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _cbuRepo.UpdateComBlogUser(cbuVM);
+            return Ok(cbuVM);
         }
 
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
-            try
-            {
-                var cbu = await _cbuRepo.GetComBlogUserById(id);
-                if (cbu == null)
-                    return NotFound();
+            var cbu = await _cbuRepo.GetComBlogUserById(id);
+            if (cbu == null)
+                return NotFound();
 
-                await _cbuRepo.DeleteComBlogUser(id);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _cbuRepo.DeleteComBlogUser(id);
+            return Ok();
         }
     }
 }

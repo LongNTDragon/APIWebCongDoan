@@ -24,77 +24,43 @@ namespace WebCongDoan_API.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            try
-            {
-                return Ok(await _blogRepo.GetAllBlog());
-            }catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return Ok(await _blogRepo.GetAllBlog());
         }
 
         [HttpGet("GetById")]
         public async Task<IActionResult> GetById(int id)
         {
-            try
-            {
-                var blog = await _blogRepo.GetBlogById(id);
-                return blog == null ? NotFound() : Ok(blog);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var blog = await _blogRepo.GetBlogById(id);
+            return blog == null ? NotFound() : Ok(blog);
         }
 
         [HttpPost]
         public async Task<IActionResult> Insert(BlogVM blogVM)
         {
-            try
-            {
-                await _blogRepo.AddBlog(blogVM);
-                return StatusCode(StatusCodes.Status201Created, blogVM);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _blogRepo.AddBlog(blogVM);
+            return StatusCode(StatusCodes.Status201Created, blogVM);
         }
 
         [HttpPut]
         public async Task<IActionResult> Update(BlogVM blogVM)
         {
-            try
-            {
-                var blog = await _blogRepo.GetBlogById(blogVM.BlogId);
-                if (blog == null)
-                    return NotFound();
+            var blog = await _blogRepo.GetBlogById(blogVM.BlogId);
+            if (blog == null)
+                return NotFound();
 
-                await _blogRepo.UpdateBlog(blogVM);
-                return Ok(blogVM);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _blogRepo.UpdateBlog(blogVM);
+            return Ok(blogVM);
         }
 
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
-            try
-            {
-                var blog = await _blogRepo.GetBlogById(id);
-                if (blog == null)
-                    return NotFound();
+            var blog = await _blogRepo.GetBlogById(id);
+            if (blog == null)
+                return NotFound();
 
-                await _blogRepo.DeleteBlog(id);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            await _blogRepo.DeleteBlog(id);
+            return Ok();
         }
     }
 }
