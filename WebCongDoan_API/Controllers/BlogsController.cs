@@ -11,7 +11,6 @@ namespace WebCongDoan_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = UserRole.Admin)]
     public class BlogsController : ControllerBase
     {
         private readonly IBlogRepository _blogRepo;
@@ -34,6 +33,7 @@ namespace WebCongDoan_API.Controllers
             return blog == null ? NotFound() : Ok(blog);
         }
 
+        [Authorize(Roles = UserRole.Admin)]
         [HttpPost]
         public async Task<IActionResult> Insert(BlogVM blogVM)
         {
@@ -41,6 +41,7 @@ namespace WebCongDoan_API.Controllers
             return StatusCode(StatusCodes.Status201Created, blogVM);
         }
 
+        [Authorize(Roles = UserRole.Admin)]
         [HttpPut]
         public async Task<IActionResult> Update(BlogVM blogVM)
         {
@@ -52,6 +53,7 @@ namespace WebCongDoan_API.Controllers
             return Ok(blogVM);
         }
 
+        [Authorize(Roles = UserRole.Admin)]
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {

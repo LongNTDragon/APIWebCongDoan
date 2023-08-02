@@ -8,7 +8,7 @@ namespace WebCongDoan_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = UserRole.Admin + "," + UserRole.Manager)]
+    
     public class QuestionsController : ControllerBase
     {
         private readonly IQuestionRepository _quesRepo;
@@ -37,6 +37,7 @@ namespace WebCongDoan_API.Controllers
             return ques == null ? NotFound() : Ok(ques);
         }
 
+        [Authorize(Roles = UserRole.Admin + "," + UserRole.Manager)]
         [HttpPost]
         public async Task<IActionResult> Insert(QuestionVM quesVM)
         {
@@ -44,6 +45,7 @@ namespace WebCongDoan_API.Controllers
             return StatusCode(StatusCodes.Status201Created, quesVM);
         }
 
+        [Authorize(Roles = UserRole.Admin + "," + UserRole.Manager)]
         [HttpPut]
         public async Task<IActionResult> Update(QuestionVM quesVM)
         {
@@ -55,6 +57,7 @@ namespace WebCongDoan_API.Controllers
             return Ok(quesVM);
         }
 
+        [Authorize(Roles = UserRole.Admin + "," + UserRole.Manager)]
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
