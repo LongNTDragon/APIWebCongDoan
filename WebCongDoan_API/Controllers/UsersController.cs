@@ -9,7 +9,6 @@ namespace WebCongDoan_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = UserRole.Admin)]
 
     public class UsersController : ControllerBase
     {
@@ -32,18 +31,21 @@ namespace WebCongDoan_API.Controllers
             return Ok(await _userRepo.GetUserById(id));
         }
 
+        [Authorize(Roles = UserRole.Admin)]
         [HttpGet]
         public async Task<IActionResult> Get()
         {
             return Ok(await _userRepo.GetAllUsers());
         }
 
+        [Authorize(Roles = UserRole.Admin)]
         [HttpGet("GetAllByDepID")]
         public async Task<IActionResult> GetAllByDepID(int id)
         {
             return Ok(await _userRepo.GetAllUsersByDepID(id));
         }
 
+        [Authorize(Roles = UserRole.Admin)]
         [HttpGet("GetAllByRoleID")]
         public async Task<IActionResult> GetAllByRoleID(int id)
         {
@@ -75,6 +77,7 @@ namespace WebCongDoan_API.Controllers
             return Ok(userVM);
         }
 
+        [Authorize(Roles = UserRole.Admin)]
         [HttpPut("UpdateIsDeleted")]
         public async Task<IActionResult> UpdateIsDeleted(string id, int value)
         {
@@ -87,6 +90,7 @@ namespace WebCongDoan_API.Controllers
             return Ok(newUser);
         }
 
+        [Authorize(Roles = UserRole.Admin)]
         [HttpDelete]
         public async Task<IActionResult> Delete(String id)
         {

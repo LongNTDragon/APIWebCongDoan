@@ -22,7 +22,8 @@ namespace WebCongDoan_API.Repository
         public async Task AddUser(RegisterVM registerVM)
         {
             var newUser = new User();
-            newUser.UserId = registerVM.UserId;
+            var userId = Guid.NewGuid().ToString();
+            newUser.UserId = userId.Substring(0, 11);
             newUser.UserName = registerVM.UserName;
             newUser.DateOfBirth = registerVM.DateOfBirth;
             newUser.Email = registerVM.Email;
