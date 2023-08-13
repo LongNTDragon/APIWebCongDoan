@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0O84J4PXsuCLfZCIU4DuoALDbeLVK8yTOgRVtN/i/qfKbNp/Gm1i/G26eujWEw9Abm3cPI0EH+naWC80W5BiJQ==",
+  "dgSpecHash": "ESPbmMUaYOfe+AdRicrdQS8Mca8ZhtQik/taV3kv2fMzvJV6Mm/zcnDoVDwbuUb8u6zVdGui31F/v/BrCfP7Zg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\source\\repos\\WebCongDoan_API\\WebCongDoan_API\\WebCongDoan_API.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\New folder\\WebCongDoan_API\\WebCongDoan_API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\automapper\\8.0.0\\automapper.8.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\6.0.0\\automapper.extensions.microsoft.dependencyinjection.6.0.0.nupkg.sha512",

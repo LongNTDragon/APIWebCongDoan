@@ -121,5 +121,11 @@ namespace WebCongDoan_API.Controllers
             Response.Cookies.Delete(_configuration["KEY_COOKIE_AUTH"]);
             return Ok("Logout success");
         }
+        [HttpPost("Register")]
+public async Task<IActionResult> Register(RegisterVM registerVM)
+{
+    await _userRepo.AddUser(registerVM);
+    return Ok("Register Access");
+}
     }
 }
